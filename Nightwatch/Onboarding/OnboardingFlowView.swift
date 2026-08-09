@@ -11,12 +11,14 @@ struct OnboardingFlowView: View {
     let onFinishedOnboarding: () -> Void
 
     var body: some View {
-        OnboardingContainerView(firstStep: AppOnboardingStep.hook) { step, advance in
-            stepView(for: step, advance: advance)
-        } paywall: { dismissPaywall in
-            PaywallView {
-                dismissPaywall()
-                onFinishedOnboarding()
+        NightSurface(intensity: 1.0) {
+            OnboardingContainerView(firstStep: AppOnboardingStep.hook) { step, advance in
+                stepView(for: step, advance: advance)
+            } paywall: { dismissPaywall in
+                PaywallView {
+                    dismissPaywall()
+                    onFinishedOnboarding()
+                }
             }
         }
     }

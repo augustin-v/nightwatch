@@ -1,6 +1,72 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "alert.notification.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conditions look worth checking around %@ — clear enough sky, dark enough sky, and real activity."
+          }
+        }
+      }
+    },
+    "alert.notification.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good aurora window tonight"
+          }
+        }
+      }
+    },
+    "common.off": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
+          }
+        }
+      }
+    },
+    "common.on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        }
+      }
+    },
+    "onboarding.alerts.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora active, sky clear, sky dark, moon out of the way. All four, or your phone stays silent."
+          }
+        }
+      }
+    },
+    "onboarding.alerts.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We only wake you when it's actually worth it."
+          }
+        }
+      }
+    },
     "onboarding.continue": {
       "extractionState": "manual",
       "localizations": {
@@ -8,17 +74,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continue"
-          }
-        }
-      }
-    },
-    "onboarding.hook.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You drove out. It was cloudy."
           }
         }
       }
@@ -34,13 +89,57 @@
         }
       }
     },
-    "onboarding.problem.title": {
+    "onboarding.hook.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "“Kp 6 tonight!”"
+            "value": "You drove out. It was cloudy."
+          }
+        }
+      }
+    },
+    "onboarding.location.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your location stays on your device. We send only a coordinate to fetch the cloud forecast — never your identity, never a history of where you've been."
+          }
+        }
+      }
+    },
+    "onboarding.location.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which sky are we watching?"
+          }
+        }
+      }
+    },
+    "onboarding.nightVision.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One tap outside, and the whole app goes red. You keep your night vision, and you can still read the screen."
+          }
+        }
+      }
+    },
+    "onboarding.nightVision.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Red light keeps your eyes adjusted."
           }
         }
       }
@@ -56,57 +155,57 @@
         }
       }
     },
-    "onboarding.quiz.wound.question": {
+    "onboarding.problem.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Have you ever missed one?"
+            "value": "“Kp 6 tonight!”"
           }
         }
       }
     },
-    "onboarding.quiz.wound.option.missedOne": {
+    "onboarding.quiz.intent.option.halfHour": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Missed one I could have seen"
+            "value": "Half an hour for a good night"
           }
         }
       }
     },
-    "onboarding.quiz.wound.option.neverSeen": {
+    "onboarding.quiz.intent.option.hourOrMore": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Never seen the aurora at all"
+            "value": "An hour or more, if it's genuinely worth it"
           }
         }
       }
     },
-    "onboarding.quiz.wound.option.chaseRegularly": {
+    "onboarding.quiz.intent.option.notFar": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "I chase most clear nights"
+            "value": "Not far — only if it's overhead"
           }
         }
       }
     },
-    "onboarding.quiz.latitude.question": {
+    "onboarding.quiz.intent.question": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Where do you watch from?"
+            "value": "How far would you drive for a real one?"
           }
         }
       }
@@ -155,13 +254,13 @@
         }
       }
     },
-    "onboarding.quiz.obstacle.question": {
+    "onboarding.quiz.latitude.question": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "What usually stops you?"
+            "value": "Where do you watch from?"
           }
         }
       }
@@ -210,68 +309,57 @@
         }
       }
     },
-    "onboarding.quiz.intent.question": {
+    "onboarding.quiz.obstacle.question": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "How far would you drive for a real one?"
+            "value": "What usually stops you?"
           }
         }
       }
     },
-    "onboarding.quiz.intent.option.notFar": {
+    "onboarding.quiz.wound.option.chaseRegularly": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Not far — only if it's overhead"
+            "value": "I chase most clear nights"
           }
         }
       }
     },
-    "onboarding.quiz.intent.option.halfHour": {
+    "onboarding.quiz.wound.option.missedOne": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Half an hour for a good night"
+            "value": "Missed one I could have seen"
           }
         }
       }
     },
-    "onboarding.quiz.intent.option.hourOrMore": {
+    "onboarding.quiz.wound.option.neverSeen": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "An hour or more, if it's genuinely worth it"
+            "value": "Never seen the aurora at all"
           }
         }
       }
     },
-    "onboarding.reflection.title": {
+    "onboarding.quiz.wound.question": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "At your latitude, you get roughly %@ realistic nights a year."
-          }
-        }
-      }
-    },
-    "onboarding.reflection.subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Most people miss most of them — not because the aurora didn't show up, but because nobody told them it was clear at the right hour."
+            "value": "Have you ever missed one?"
           }
         }
       }
@@ -287,13 +375,24 @@
         }
       }
     },
-    "onboarding.solution.title": {
+    "onboarding.reflection.subtitle": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Know by dinner whether tonight is worth it."
+            "value": "Most people miss most of them — not because the aurora didn't show up, but because nobody told them it was clear at the right hour."
+          }
+        }
+      }
+    },
+    "onboarding.reflection.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At your latitude, you get roughly %@ realistic nights a year."
           }
         }
       }
@@ -309,68 +408,46 @@
         }
       }
     },
-    "onboarding.alerts.title": {
+    "onboarding.solution.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "We only wake you when it's actually worth it."
+            "value": "Know by dinner whether tonight is worth it."
           }
         }
       }
     },
-    "onboarding.alerts.subtitle": {
+    "paywall.annual.badge": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aurora active, sky clear, sky dark, moon out of the way. All four, or your phone stays silent."
+            "value": "Best value"
           }
         }
       }
     },
-    "onboarding.nightVision.title": {
+    "paywall.annual.priceLabel": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Red light keeps your eyes adjusted."
+            "value": "$39.99/year"
           }
         }
       }
     },
-    "onboarding.nightVision.subtitle": {
+    "paywall.annual.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "One tap outside, and the whole app goes red. You keep your night vision, and you can still read the screen."
-          }
-        }
-      }
-    },
-    "onboarding.location.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Which sky are we watching?"
-          }
-        }
-      }
-    },
-    "onboarding.location.subtitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your location stays on your device. We send only a coordinate to fetch the cloud forecast — never your identity, never a history of where you've been."
+            "value": "Annual"
           }
         }
       }
@@ -397,35 +474,13 @@
         }
       }
     },
-    "paywall.annual.title": {
+    "paywall.weekly.priceLabel": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Annual"
-          }
-        }
-      }
-    },
-    "paywall.annual.priceLabel": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "$39.99/year"
-          }
-        }
-      }
-    },
-    "paywall.annual.badge": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Best value"
+            "value": "$9.99/week"
           }
         }
       }
@@ -441,13 +496,13 @@
         }
       }
     },
-    "paywall.weekly.priceLabel": {
+    "retention.offer.description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/week"
+            "value": "No alerts when the sky finally clears. No three-night view. No saved places. The next good night will happen whether or not you're outside for it."
           }
         }
       }
@@ -459,17 +514,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "You'll go back to guessing."
-          }
-        }
-      }
-    },
-    "retention.offer.description": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No alerts when the sky finally clears. No three-night view. No saved places. The next good night will happen whether or not you're outside for it."
           }
         }
       }
@@ -496,17 +540,6 @@
         }
       }
     },
-    "tab.tonight": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tonight"
-          }
-        }
-      }
-    },
     "tab.settings": {
       "extractionState": "manual",
       "localizations": {
@@ -518,68 +551,13 @@
         }
       }
     },
-    "tonight.title": {
+    "tab.tonight": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Tonight"
-          }
-        }
-      }
-    },
-    "tonight.band.none": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No chance"
-          }
-        }
-      }
-    },
-    "tonight.band.slim": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slim"
-          }
-        }
-      }
-    },
-    "tonight.band.worthWatching": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Worth watching"
-          }
-        }
-      }
-    },
-    "tonight.band.strong": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Strong"
-          }
-        }
-      }
-    },
-    "tonight.band.rare": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rare"
           }
         }
       }
@@ -595,68 +573,57 @@
         }
       }
     },
-    "tonight.limitingFactor.darkness": {
+    "tonight.band.none": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "It's not dark enough yet tonight."
+            "value": "No chance"
           }
         }
       }
     },
-    "tonight.limitingFactor.clouds": {
+    "tonight.band.rare": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clouds are the problem tonight."
+            "value": "Rare"
           }
         }
       }
     },
-    "tonight.limitingFactor.activity": {
+    "tonight.band.slim": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aurora activity is the limiting factor tonight."
+            "value": "Slim"
           }
         }
       }
     },
-    "tonight.limitingFactor.moon": {
+    "tonight.band.strong": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Moonlight is washing out the sky tonight."
+            "value": "Strong"
           }
         }
       }
     },
-    "tonight.limitingFactor.none": {
+    "tonight.band.worthWatching": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nothing is holding tonight back."
-          }
-        }
-      }
-    },
-    "tonight.bestWindow.range": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Best window: %@–%@"
+            "value": "Worth watching"
           }
         }
       }
@@ -672,13 +639,13 @@
         }
       }
     },
-    "tonight.factors.heading": {
+    "tonight.bestWindow.range": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Why"
+            "value": "Best window: %@–%@"
           }
         }
       }
@@ -727,6 +694,72 @@
         }
       }
     },
+    "tonight.factor.none": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing in the way"
+          }
+        }
+      }
+    },
+    "tonight.factors.accessibility.limiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$@. This is what is holding tonight back."
+          }
+        }
+      }
+    },
+    "tonight.factors.accessibility.normal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$@."
+          }
+        }
+      }
+    },
+    "tonight.factors.heading": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Why"
+          }
+        }
+      }
+    },
+    "tonight.factors.limitingBadge": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Holding it back"
+          }
+        }
+      }
+    },
+    "tonight.hourlyStrip.accessibilityValue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best at %1$@, reaching %2$@."
+          }
+        }
+      }
+    },
     "tonight.hourlyStrip.heading": {
       "extractionState": "manual",
       "localizations": {
@@ -734,6 +767,149 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hour by hour"
+          }
+        }
+      }
+    },
+    "tonight.limitingFactor.activity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora activity is the limiting factor tonight."
+          }
+        }
+      }
+    },
+    "tonight.limitingFactor.clouds": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clouds are the problem tonight."
+          }
+        }
+      }
+    },
+    "tonight.limitingFactor.darkness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It's not dark enough yet tonight."
+          }
+        }
+      }
+    },
+    "tonight.limitingFactor.moon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moonlight is washing out the sky tonight."
+          }
+        }
+      }
+    },
+    "tonight.limitingFactor.none": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing is holding tonight back."
+          }
+        }
+      }
+    },
+    "tonight.nightVision.accessibilityLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Night vision mode"
+          }
+        }
+      }
+    },
+    "tonight.reading.activity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kp %@"
+          }
+        }
+      }
+    },
+    "tonight.reading.clouds": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cloud"
+          }
+        }
+      }
+    },
+    "tonight.reading.darkness": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sun %@"
+          }
+        }
+      }
+    },
+    "tonight.reading.moon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ lit"
+          }
+        }
+      }
+    },
+    "tonight.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonight"
+          }
+        }
+      }
+    },
+    "tonight.verdict.accessibilitySummary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonight: %1$@. %2$@ Best window %3$@."
+          }
+        }
+      }
+    },
+    "tonight.verdict.eyebrow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonight"
           }
         }
       }

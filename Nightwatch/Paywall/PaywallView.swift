@@ -10,6 +10,14 @@ struct PaywallView: View {
     let onContinue: () -> Void
 
     var body: some View {
+        // The paywall is a conversion surface, so it gets the identity too —
+        // a white sheet after ten dark screens reads as a different app.
+        NightSurface(intensity: 0.7) {
+            paywall
+        }
+    }
+
+    private var paywall: some View {
         FactoryPaywallView(
             headline: String(localized: "paywall.headline"),
             subheadline: String(localized: "paywall.subheadline"),

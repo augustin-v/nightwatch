@@ -8,10 +8,21 @@ import AuroraCore
 /// the real (already-tested) `VisibilityEngine` over static sample inputs
 /// for a fixed observer near Tromsø, Norway.
 enum SampleNight {
+    /// Place names are proper nouns, not translatable UI copy, so this is
+    /// rendered with `Text(verbatim:)` rather than routed through the catalog.
+    static let placeName = "Tromsø"
+
     static let observerLatitude = 69.6492
     static let observerLongitude = 18.9553
 
-    static var verdict: NightVerdict {
+    /// The inputs behind `verdict`, exposed so the factor rows can display
+    /// real readings (Kp, cloud cover, sun altitude, moon illumination)
+    /// rather than internal sub-scores.
+    static var inputs: [HourlyVisibilityInput] { Self.build().inputs }
+
+    static var verdict: NightVerdict { Self.build().verdict }
+
+    private static func build() -> (inputs: [HourlyVisibilityInput], verdict: NightVerdict) {
         let calendar = Calendar(identifier: .gregorian)
         var components = DateComponents()
         components.year = 2026
@@ -21,29 +32,34 @@ enum SampleNight {
         components.minute = 0
         let start = calendar.date(from: components) ?? Date()
 
+        // A realistic January night in Tromsø: the sun keeps sinking after
+        // 18:00 and climbs back at dawn, cloud clears mid-evening then rolls
+        // back in, and a thin crescent sets early. Keeping the sample
+        // physically coherent matters — a flat solar altitude produced a
+        // verdict that contradicted its own best window.
         let hours: [HourlyVisibilityInput] = (0..<8).map { offset in
             let date = calendar.date(byAdding: .hour, value: offset, to: start) ?? start
-            // A gently rising-then-falling storm/clear-sky window, hand-picked
-            // so the sample renders a "Worth watching" verdict with clouds
-            // as a visible but non-fatal factor and a real best window.
-            let shape: [Double] = [10, 25, 45, 60, 55, 40, 20, 10]
+            let ovation: [Double] = [10, 25, 45, 60, 55, 40, 20, 10]
             let cloud: [Double] = [70, 55, 35, 20, 25, 40, 60, 75]
-            let idx = min(offset, shape.count - 1)
+            let sunAltitude: [Double] = [-8, -13, -17, -20, -21, -19, -15, -10]
+            let moonAltitude: [Double] = [14, 8, 2, -5, -12, -18, -22, -24]
+            let idx = min(offset, ovation.count - 1)
             return HourlyVisibilityInput(
                 date: date,
-                ovationProbability: shape[idx],
+                ovationProbability: ovation[idx],
                 forecastKp: 4,
                 cloudFraction: cloud[idx],
-                solarAltitude: -14,
-                moonIllumination: 0.2,
-                moonAltitude: 10
+                solarAltitude: sunAltitude[idx],
+                moonIllumination: 0.18,
+                moonAltitude: moonAltitude[idx]
             )
         }
 
-        return VisibilityEngine.nightVerdict(
+        let verdict = VisibilityEngine.nightVerdict(
             hours: hours,
             observerLatitude: observerLatitude,
             observerLongitude: observerLongitude
         )
+        return (hours, verdict)
     }
 }
