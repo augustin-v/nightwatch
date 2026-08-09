@@ -1,0 +1,141 @@
+{
+  "type": "Feature",
+  "geometry": { "type": "Point", "coordinates": [18.9553, 69.6489, 10.0] },
+  "properties": {
+    "meta": {
+      "updated_at": "2026-08-09T06:15:23Z",
+      "units": {
+        "air_temperature": "celsius",
+        "cloud_area_fraction": "%",
+        "precipitation_amount": "mm",
+        "relative_humidity": "%",
+        "wind_speed": "m/s"
+      }
+    },
+    "timeseries": [
+      {
+        "time": "2026-08-09T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 11.2,
+              "cloud_area_fraction": 88.0,
+              "relative_humidity": 76.4,
+              "wind_speed": 3.1
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "cloudy" },
+            "details": { "precipitation_amount": 0.0 }
+          },
+          "next_6_hours": {
+            "summary": { "symbol_code": "cloudy" },
+            "details": { "precipitation_amount": 0.2 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-09T07:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 11.0,
+              "cloud_area_fraction": 92.5,
+              "relative_humidity": 78.1,
+              "wind_speed": 3.4
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "cloudy" },
+            "details": { "precipitation_amount": 0.1 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-09T08:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 10.6,
+              "cloud_area_fraction": 64.0,
+              "relative_humidity": 74.0,
+              "wind_speed": 3.0
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "partlycloudy" },
+            "details": { "precipitation_amount": 0.0 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-09T21:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 8.9,
+              "cloud_area_fraction": 30.0,
+              "relative_humidity": 70.0,
+              "wind_speed": 2.2
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "partlycloudy" },
+            "details": { "precipitation_amount": 0.0 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-09T23:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 7.9,
+              "cloud_area_fraction": 5.0,
+              "relative_humidity": 65.0,
+              "wind_speed": 1.8
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "clearsky" },
+            "details": { "precipitation_amount": 0.0 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-10T01:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 7.1,
+              "cloud_area_fraction": 100.0,
+              "relative_humidity": 90.0,
+              "wind_speed": 4.5
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "cloudy" },
+            "details": { "precipitation_amount": 1.2 }
+          }
+        }
+      },
+      {
+        "time": "2026-08-10T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_temperature": 9.8,
+              "cloud_area_fraction": 12.0,
+              "relative_humidity": 68.0,
+              "wind_speed": 2.0
+            }
+          },
+          "next_1_hours": {
+            "summary": { "symbol_code": "fair" },
+            "details": { "precipitation_amount": 0.0 }
+          }
+        }
+      }
+    ]
+  }
+}

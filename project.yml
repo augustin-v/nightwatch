@@ -80,4 +80,18 @@ targets:
         GENERATE_INFOPLIST_FILE: false
         TARGETED_DEVICE_FAMILY: "1"
     scheme:
+      testTargets:
+        - NightwatchTests
       testable: true
+  NightwatchTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: NightwatchTests
+    dependencies:
+      - target: Nightwatch
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        SWIFT_VERSION: "6.0"
