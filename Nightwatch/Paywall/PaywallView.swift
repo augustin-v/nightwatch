@@ -35,8 +35,11 @@ struct PaywallView: View {
         .task {
             Analytics.paywallViewed(source: source)
             await store.refresh()
-            if store.isEntitled { onEntitled() }
-
+            guard !store.isEntitled else {
+                onEntitled()
+                return
+            }
+            PaywallPresenter.presentOnboardingPaywall()
         }
         .sheet(item: $legalDocument) { document in
             NavigationStack {
