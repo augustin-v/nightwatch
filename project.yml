@@ -53,6 +53,8 @@ targets:
         CFBundleDisplayName: Aurora Forecast - Nightwatch
         CFBundleDevelopmentRegion: en
         CFBundleIconName: AppIcon
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "2"
         # Launch locales per the candidate spec. Keep in sync with the
         # .xcstrings catalogs; a locale listed here with no catalog entries
         # silently ships English, which is worse than not listing it.
