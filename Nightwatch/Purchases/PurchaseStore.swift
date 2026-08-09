@@ -59,7 +59,7 @@ final class PurchaseStore {
     /// Both are best effort: a network failure leaves the cached entitlement
     /// in place and the paywall falls back to its bundled price copy.
     func refresh() async {
-        guard PurchaseConfiguration.isConfigured else { return }
+        guard PurchaseConfiguration.isConfigured, !ScreenshotConfiguration.current.isEnabled else { return }
 
         if let info = try? await Purchases.shared.customerInfo() {
             apply(info)

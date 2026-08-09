@@ -37,14 +37,6 @@ struct PaywallView: View {
             await store.refresh()
             if store.isEntitled { onEntitled() }
 
-            // This screen is the guaranteed gate: it is local, it is
-            // localized in all eight languages, and it renders with no
-            // network. Superwall is then given the chance to present its own
-            // paywall over the top, which is what makes remote experiments
-            // possible without ever risking an unusable app. If the campaign
-            // has nothing to show, or the device is offline, this screen
-            // simply stays.
-            PaywallPresenter.registerOnboardingPlacement { await store.refresh() }
         }
         .sheet(item: $legalDocument) { document in
             NavigationStack {
@@ -52,7 +44,6 @@ struct PaywallView: View {
             }
             .preferredColorScheme(.dark)
         }
-        .onReceive(PaywallPresenter.legalRequests) { legalDocument = $0 }
     }
 
     private var content: some View {
@@ -230,7 +221,7 @@ struct PaywallView: View {
             .background(Nightwatch.Palette.ctaGreen, in: RoundedRectangle(cornerRadius: Nightwatch.Radius.chip))
             .foregroundStyle(.white)
         }
-        .disabled(store.isPurchasing || store.isRestoring)
+        .disabled(store.isPurchasing || store.isRestoring || product(for: selectedPlan) == nil)
         .padding(.top, Nightwatch.Space.xs)
     }
 
@@ -265,11 +256,11 @@ struct PaywallView: View {
 
     // MARK: - Prices
 
-    /// The real localized store price when RevenueCat has answered, and the
-    /// bundled fallback copy when it has not. Never a hardcoded currency.
+    /// The real localized store price when RevenueCat has answered. When it
+    /// has not, the row is explicit and the purchase control stays disabled.
     private func priceText(for plan: PaywallPlanChoice) -> String {
         guard let product = product(for: plan) else {
-            return String(localized: plan.fallbackPriceKey)
+            return String(localized: "paywall.error.unavailable")
         }
         return String(
             format: String(localized: plan.pricePerPeriodKey),

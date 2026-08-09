@@ -11,6 +11,11 @@ struct NightwatchApp: App {
     @Environment(\.scenePhase) private var scenePhase
 
     init() {
+        let screenshot = ScreenshotConfiguration.current
+        screenshot.prepareLaunch()
+
+        guard !screenshot.isEnabled else { return }
+
         BackgroundTaskRegistrar.register {
             AppServices.makeBackgroundCoordinator()
         }

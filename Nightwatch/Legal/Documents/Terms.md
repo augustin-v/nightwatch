@@ -72,13 +72,3 @@ regard to its conflict of law provisions.
 
 If you have questions about these Terms, contact us at
 augustin.dev@tutamail.com.
-
----
-
-## Apple's standard EULA
-
-If Aurora Forecast - Nightwatch does not have a custom EULA linked in App Store Connect,
-Apple's standard End User License Agreement applies automatically, and this
-document supplements (not replaces) it. Confirm in
-[04_metadata.md](../04_metadata.md) whether this template is being linked as
-a custom EULA or left to fall back to Apple's standard terms.

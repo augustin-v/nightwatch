@@ -1,5 +1,6 @@
 import SwiftUI
 import AuroraCore
+import StoreKit
 
 /// The app's main screen: tonight's answer, why, and when.
 ///
@@ -10,7 +11,8 @@ struct TonightView: View {
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var model = TonightModel()
     @State private var services = AppServices.shared
-    @State private var showingAlerts = false
+    @State private var showingAlerts = ScreenshotConfiguration.current.showsAlerts
+    @Environment(\.requestReview) private var requestReview
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
     private var palette: Nightwatch.Palette { .forMode(mode) }
@@ -32,6 +34,13 @@ struct TonightView: View {
         .sheet(isPresented: $showingAlerts) { AlertsView() }
         .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
         .task { Analytics.featureUsed(.tonightViewed) }
+        .onChange(of: model.reviewRequestSequence) {
+            guard model.reviewRequestSequence > 0 else { return }
+            Task {
+                try? await Task.sleep(for: .seconds(2))
+                requestReview()
+            }
+        }
     }
 
     @ViewBuilder

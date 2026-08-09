@@ -103,6 +103,9 @@ public enum BackgroundTaskRegistrar {
     /// floor; the app layer may pass a dusk-anchored date instead once it
     /// knows the user's location.
     public static func scheduleNextRefresh(earliestBeginDate: Date = Date().addingTimeInterval(6 * 3600)) {
+#if DEBUG
+        guard !ProcessInfo.processInfo.arguments.contains("-screenshotMode") else { return }
+#endif
         let request = BGAppRefreshTaskRequest(identifier: BackgroundRefreshCoordinator.backgroundTaskIdentifier)
         request.earliestBeginDate = earliestBeginDate
         try? BGTaskScheduler.shared.submit(request)

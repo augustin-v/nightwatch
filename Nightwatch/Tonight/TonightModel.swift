@@ -19,6 +19,7 @@ final class TonightModel {
 
     private(set) var state: State = .loading
     private(set) var isRefreshing = false
+    private(set) var reviewRequestSequence = 0
 
     private let services: AppServices
     private var hasStarted = false
@@ -86,6 +87,9 @@ final class TonightModel {
 
         loadedCoordinate = coordinate
         services.rememberCoordinateForBackgroundRefresh(coordinate)
+        if AlertSettings.isEnabled {
+            AlertSettings.rescheduleNow()
+        }
 
         if !force, case .loading = state,
            let cached = await services.forecastService.cachedTonight(at: coordinate) {
@@ -93,9 +97,14 @@ final class TonightModel {
         }
 
         isRefreshing = true
+
         let report = await services.forecastService.refreshTonight(at: coordinate)
         isRefreshing = false
         state = .ready(report)
+        if !ScreenshotConfiguration.current.isEnabled,
+           ReviewPromptPolicy.recordSuccessfulForecast() {
+            reviewRequestSequence += 1
+        }
 
         // A successful refresh is also the right moment to re-arm the next
         // background wake, so alerts stay scheduled for an app that is opened

@@ -1,5 +1,17 @@
 import SwiftUI
 
+private enum AppTab: String, Hashable {
+    case tonight
+    case nights
+    case map
+    case places
+    case settings
+
+    static var screenshotSelection: AppTab {
+        AppTab(rawValue: ScreenshotConfiguration.current.selectedTab) ?? .tonight
+    }
+}
+
 /// Routes between onboarding, the paywall, and the app.
 ///
 /// This is a hard paywall, not a freemium app: onboarding hands straight to
@@ -15,6 +27,7 @@ import SwiftUI
 struct RootView: View {
     @State private var appState = AppState()
     @State private var purchases = PurchaseStore.shared
+    @State private var selectedTab = AppTab.screenshotSelection
 
     var body: some View {
         if !appState.hasCompletedOnboarding {
@@ -34,31 +47,36 @@ struct RootView: View {
     }
 
     private var tabs: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             TonightView()
                 .tabItem {
                     Label { Text("tab.tonight") } icon: { Image(systemName: "sparkles") }
                 }
+                .tag(AppTab.tonight)
 
             NightsAheadView()
                 .tabItem {
                     Label { Text("tab.nights") } icon: { Image(systemName: "calendar") }
                 }
+                .tag(AppTab.nights)
 
             OvalMapView()
                 .tabItem {
                     Label { Text("tab.map") } icon: { Image(systemName: "globe.europe.africa") }
                 }
+                .tag(AppTab.map)
 
             PlacesView()
                 .tabItem {
                     Label { Text("tab.places") } icon: { Image(systemName: "mappin.and.ellipse") }
                 }
+                .tag(AppTab.places)
 
             SettingsView()
                 .tabItem {
                     Label { Text("tab.settings") } icon: { Image(systemName: "gearshape") }
                 }
+                .tag(AppTab.settings)
         }
     }
 }

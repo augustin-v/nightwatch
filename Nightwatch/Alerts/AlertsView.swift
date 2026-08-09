@@ -254,6 +254,17 @@ enum AlertSettings {
     nonisolated static var isEnabled: Bool {
         UserDefaults.standard.bool(forKey: enabledKey)
     }
+    static func applyNotificationAuthorization(
+        granted: Bool,
+        defaults: UserDefaults = .standard
+    ) {
+        guard granted else { return }
+        defaults.set(true, forKey: enabledKey)
+        if defaults.object(forKey: thresholdKey) == nil {
+            defaults.set(defaultThreshold, forKey: thresholdKey)
+        }
+    }
+
 
     static func requestAuthorizationIfNeeded() async {
         _ = try? await UNUserNotificationCenter.current()

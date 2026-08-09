@@ -6,8 +6,9 @@ import UserNotifications
 /// system frameworks, requested at the point the copy explains why
 /// (per ONBOARDING.md and the candidate spec §5).
 enum PermissionRequesters {
-    static func requestNotifications() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
+    static func requestNotifications() async -> Bool {
+        (try? await UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge])) ?? false
     }
 }
 

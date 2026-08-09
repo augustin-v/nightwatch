@@ -109,8 +109,12 @@ struct OnboardingFlowView: View {
                 subtitle: String(localized: "onboarding.alerts.subtitle"),
                 continueTitle: String(localized: "onboarding.continue"),
                 onContinue: {
-                    PermissionRequesters.requestNotifications()
-                    advance()
+                    Task {
+                        let granted = await PermissionRequesters.requestNotifications()
+                        AlertSettings.applyNotificationAuthorization(granted: granted)
+                        if granted { AlertSettings.rescheduleNow() }
+                        advance()
+                    }
                 }
             )
         case .nightVision:

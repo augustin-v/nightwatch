@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Nightwatch</title>
+  <meta name="description" content="Privacy Policy for Aurora Forecast — Nightwatch.">
+  <style>
+    :root { color-scheme: dark; --bg:#080b16; --surface:#101525; --text:#f4f7ff; --muted:#a9adc2; --line:#252c42; --green:#2ec49a; --violet:#a470ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at 80% -10%,#133f40 0,transparent 34rem),var(--bg); color:var(--text); font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(760px,calc(100% - 40px)); margin:0 auto; padding:72px 0 96px; }
+    nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:64px; }
+    nav a,.links a { color:var(--muted); text-decoration:none; }
+    nav a:hover,.links a:hover { color:var(--text); }
+    .brand { color:var(--text); font-weight:750; letter-spacing:-.02em; }
+    h1 { font-size:clamp(2.5rem,8vw,4.75rem); line-height:.98; letter-spacing:-.055em; margin:0 0 20px; max-width:680px; }
+    h2 { font-size:1.45rem; letter-spacing:-.025em; margin:52px 0 14px; }
+    p,li { color:#d7daE6; }
+    .updated,.lede { color:var(--muted); }
+    .lede { font-size:1.15rem; }
+    strong { color:var(--text); }
+    a { color:#69dfbd; }
+    ul { padding-left:22px; }
+    li { margin:9px 0; }
+    .table { overflow:auto; border:1px solid var(--line); border-radius:16px; background:rgba(16,21,37,.78); }
+    table { width:100%; border-collapse:collapse; min-width:640px; }
+    th,td { text-align:left; vertical-align:top; padding:14px 16px; border-bottom:1px solid var(--line); }
+    th { color:var(--text); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+    tr:last-child td { border-bottom:0; }
+    footer { margin-top:72px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); }
+  </style>
+</head>
+<body><main>
+  <nav><a class="brand" href="../">Nightwatch</a><div class="links"><a href="../support/">Support</a> · <a href="../terms/">Terms</a></div></nav>
+  <h1>Privacy without the fog.</h1>
+  <p class="updated">Privacy Policy for Aurora Forecast — Nightwatch · Last updated: 9 August 2026</p>
+  <p class="lede">Augustin Villetard (“we,” “us,” or “our”) operates Aurora Forecast — Nightwatch (the “App”). This page explains what information the App handles, what leaves your device, and what your rights are.</p>
+
+  <h2>The short version</h2>
+  <p>The App has no accounts. Your location is used on your device to work out what the sky will do above you. To fetch a cloud forecast we send an <strong>approximate</strong> coordinate (rounded to roughly 10 km) to a public weather service. We operate a small first-party analytics endpoint for bounded, anonymous product events. We never receive a history of where you have been, and we never sell anything about you.</p>
+
+  <h2>Information the App handles</h2>
+  <ul>
+    <li><strong>Location.</strong> With your permission, the App reads your device location to compute sunset and twilight times, moon position, aurora probability at your latitude, and to request a local cloud forecast. Your precise location is used <strong>only on your device</strong> and is stored only on your device. Before any network request, the coordinate is rounded to approximately one tenth of a degree (about 10 km), and only that rounded coordinate is sent. If you save a place while location access is available, the App can keep forecasting for that saved place after you revoke location permission.</li>
+    <li><strong>Places you save.</strong> Stored on your device. Not transmitted to us.</li>
+    <li><strong>Analytics.</strong> We use our first-party Factory Analytics service, hosted on Cloudflare Workers and D1, to understand screens viewed, features used, and onboarding completion. Events are tied to a random analytics-only installation identifier, not your name, email, Apple device identifier, or advertising identifier. Analytics events do <strong>not</strong> include your coordinates, saved places, or other user-entered text.</li>
+    <li><strong>Purchases and subscriptions.</strong> Handled by Apple and RevenueCat. We see subscription status, not your payment details, which Apple handles entirely.</li>
+    <li><strong>Paywall interaction.</strong> Superwall records which paywall you saw and what you did with it.</li>
+  </ul>
+  <p>We do not sell your personal information, and we do not use your data for advertising or cross-app tracking.</p>
+
+  <h2>What leaves your device, and to whom</h2>
+  <div class="table"><table><thead><tr><th>What</th><th>Where it goes</th><th>Why</th></tr></thead><tbody>
+    <tr><td>Rounded coordinate (~10 km)</td><td>MET Norway</td><td>Hourly cloud-cover forecast</td></tr>
+    <tr><td>Nothing location-related</td><td>NOAA Space Weather Prediction Center</td><td>Global aurora and geomagnetic data; the request contains no location</td></tr>
+    <tr><td>Anonymous usage events and an analytics-only installation identifier</td><td>Factory Analytics, hosted by Cloudflare</td><td>Product analytics and aggregate retention measurement</td></tr>
+    <tr><td>Subscription state</td><td>RevenueCat, Apple</td><td>Entitlements and receipts</td></tr>
+    <tr><td>Paywall events</td><td>Superwall</td><td>Paywall delivery and testing</td></tr>
+  </tbody></table></div>
+  <p>Weather data from MET Norway is used under CC BY 4.0. Space weather data is provided by NOAA SWPC, a US government public service.</p>
+
+  <h2>Third-party services</h2>
+  <ul>
+    <li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> — processor hosting Factory Analytics</li>
+    <li><a href="https://www.revenuecat.com/privacy">RevenueCat</a> — subscriptions</li>
+    <li><a href="https://superwall.com/privacy">Superwall</a> — paywalls</li>
+    <li><a href="https://www.met.no/en/About-us/privacy">MET Norway</a> — weather</li>
+    <li><a href="https://www.weather.gov/privacy">NOAA SWPC</a> — space weather</li>
+    <li>Apple App Store — Apple’s privacy policy governs payment processing.</li>
+  </ul>
+
+  <h2>Data retention</h2>
+  <p>Raw Factory Analytics events are retained for 14 days. Server-side installation-level records are retained for up to 45 days to calculate aggregate retention, then removed; long-lived metrics contain aggregate counts only. The random analytics identifier stored on your device remains there until you remove the App or its data. Subscription and paywall data are retained by Apple, RevenueCat, and Superwall as described in their policies. Location data is not retained by us at all, because we never receive it.</p>
+
+  <h2>Your rights</h2>
+  <p>If you are in the European Economic Area, the United Kingdom, or another jurisdiction with comparable law, you have the right to access, correct, delete, restrict, or object to processing of personal data we hold about you, and to data portability. Because the App has no accounts, the data we hold is limited to anonymous analytics and subscription records. To exercise any of these rights, or to ask us to delete your analytics identifier, email <a href="mailto:augustin.dev@tutamail.com">augustin.dev@tutamail.com</a> and we will respond within 30 days.</p>
+  <p>You can also:</p>
+  <ul><li>revoke location permission at any time in iOS Settings (previously saved places remain available);</li><li>cancel your subscription in your Apple ID settings.</li></ul>
+  <p>The legal basis for analytics and paywall processing is our legitimate interest in operating and improving the App; the legal basis for subscription processing is performance of our contract with you.</p>
+
+  <h2>Children’s privacy</h2>
+  <p>The App is not directed at children under 13 and we do not knowingly collect personal information from children under 13.</p>
+  <h2>Changes</h2>
+  <p>We may update this policy. Changes are posted at this URL with a new “Last updated” date.</p>
+  <h2>Contact</h2>
+  <p><a href="mailto:augustin.dev@tutamail.com">augustin.dev@tutamail.com</a></p>
+  <footer>© 2026 Augustin Villetard</footer>
+</main></body></html>
