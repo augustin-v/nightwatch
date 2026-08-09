@@ -1,11 +1,10 @@
 # Privacy Policy — Aurora Forecast - Nightwatch
 
-> **PREPARED DRAFT — NOT APPROVED, NOT PUBLISHED.** The factory's shared
-> privacy template explicitly refuses to cover apps that use location data or
-> that need GDPR data-subject-rights language, and this app does both. This is
-> therefore a custom draft written to be honest and complete, flagged for the
-> owner's review before it is linked from Settings or published. It is not
-> legal advice and I am not a lawyer.
+> **Approved by the app owner on 2026-08-09.** The factory's shared privacy
+> template explicitly refuses to cover apps that use location data or that
+> need GDPR data-subject-rights language, and this app does both, so this is a
+> custom document rather than a filled-in template. It is not legal advice and
+> was not written by a lawyer.
 
 **Privacy Policy for Aurora Forecast - Nightwatch**
 
@@ -81,7 +80,7 @@ restrict, or object to processing of personal data we hold about you, and to
 data portability. Because the App has no accounts, the data we hold is limited
 to anonymous analytics and subscription records. To exercise any of these
 rights, or to ask us to delete your analytics identifier, email
-avilletardpiano@gmail.com and we will respond within 30 days.
+augustin.dev@tutamail.com and we will respond within 30 days.
 
 You can also:
 
@@ -106,4 +105,4 @@ updated" date.
 
 ## Contact
 
-avilletardpiano@gmail.com
+augustin.dev@tutamail.com

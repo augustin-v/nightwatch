@@ -1,6 +1,6 @@
 # Legal document status
 
-## Privacy policy — custom draft, awaiting owner approval
+## Privacy policy — custom draft, approved by the owner on 2026-08-09
 
 `Nightwatch/Legal/Documents/Privacy.md` is a **custom-drafted** privacy
 policy, not a filled-in copy of `factory/legal/privacy-policy-template.md`.
@@ -15,7 +15,7 @@ storefronts where GDPR rights language is required. Per STANDARDS.md §6
 (scaffold step) this is an escalation to custom legal drafting, not a
 placeholder-fill.
 
-**Status:** PREPARED, not approved. The document carries its own in-file
+**Status:** APPROVED, not approved. The document carries its own in-file
 banner (do not remove it) stating it is a prepared draft, not legal advice,
 and not yet approved or published. It is linked from the Settings screen in
 the scaffold so the required-screen structure exists, but per STANDARDS.md
@@ -41,7 +41,7 @@ location/GDPR gap that blocks the privacy policy. Filled values:
 - `{{BRIEF_ONE_LINE_DESCRIPTION_OF_APP_PURPOSE}}` → forecasting aurora
   visibility conditions
 - `{{GOVERNING_JURISDICTION}}` → France
-- `{{SUPPORT_EMAIL}}` → avilletardpiano@gmail.com
+- `{{SUPPORT_EMAIL}}` → augustin.dev@tutamail.com
 - Free-trial section: removed (no free trial is offered)
 - Health/fitness/wellness disclaimer: removed (not applicable)
 - Added an explicit price line ($9.99/week, $39.99/year) since the shared
@@ -49,3 +49,11 @@ location/GDPR gap that blocks the privacy policy. Filled values:
   tier prices to be stated.
 
 No literal `{{...}}` remains in either document.
+
+
+## Status update 2026-08-09
+
+The owner approved the custom privacy policy (Control Room request
+`req_67d52c6ca0`) and set the support address to augustin.dev@tutamail.com.
+The draft banner has been replaced with an approval note. No lawyer has
+reviewed it; the owner accepted that explicitly.

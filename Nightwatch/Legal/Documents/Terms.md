@@ -71,7 +71,7 @@ regard to its conflict of law provisions.
 ## Contact us
 
 If you have questions about these Terms, contact us at
-avilletardpiano@gmail.com.
+augustin.dev@tutamail.com.
 
 ---
 

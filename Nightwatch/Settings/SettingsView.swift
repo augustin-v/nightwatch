@@ -19,7 +19,7 @@ struct SettingsView: View {
                 // Phase 5: wire real RevenueCat restore-purchases call.
             },
             onContactSupport: {
-                guard let url = URL(string: "mailto:avilletardpiano@gmail.com") else { return }
+                guard let url = URL(string: "mailto:augustin.dev@tutamail.com") else { return }
                 UIApplication.shared.open(url)
             },
             privacyPolicyTitle: String(localized: "settings.privacyPolicy.title"),
