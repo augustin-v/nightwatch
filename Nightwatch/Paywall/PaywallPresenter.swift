@@ -1,15 +1,32 @@
 import SuperwallKit
 
-/// Presents the remotely managed paywall over the native hard-paywall gate.
+/// Presents the remotely managed purchase surface.
 ///
-/// The native `PaywallView` remains underneath, so an unavailable campaign,
-/// network failure, or a user closing the remote surface can never unlock the
-/// product. No feature closure is supplied to Superwall: RevenueCat entitlement
-/// state remains the only route through `RootView`.
+/// Superwall owns all paywall content and purchase controls. The completion
+/// callback only asks the caller to reconcile RevenueCat entitlement state; it
+/// never grants access by itself.
 @MainActor
 enum PaywallPresenter {
-    static func presentOnboardingPaywall() {
-        guard PurchaseConfiguration.isConfigured else { return }
-        Superwall.shared.register(placement: "onboarding_completed")
+    static func presentOnboardingPaywall(onComplete: @escaping @MainActor () -> Void) {
+        guard PurchaseConfiguration.isConfigured, !ScreenshotConfiguration.current.isEnabled else {
+            onComplete()
+            return
+        }
+
+        let handler = PaywallPresentationHandler()
+        handler.onDismiss { _, _ in
+            Task { @MainActor in onComplete() }
+        }
+        handler.onError { _ in
+            Task { @MainActor in onComplete() }
+        }
+        handler.onSkip { _ in
+            Task { @MainActor in onComplete() }
+        }
+
+        Superwall.shared.register(
+            placement: "onboarding_completed",
+            handler: handler
+        )
     }
 }

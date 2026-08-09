@@ -18,18 +18,8 @@ final class PurchaseStore {
     /// Whether the `pro` entitlement is currently active.
     ///
     /// Seeded from the cached value in `AppState` so a paying user does not
-    /// see the hard paywall flash for the half second RevenueCat needs to
-    /// answer on a cold launch.
+    /// see the remote paywall flash while RevenueCat refreshes on cold launch.
     private(set) var isEntitled: Bool
-
-    private(set) var annual: Package?
-    private(set) var weekly: Package?
-    private(set) var isPurchasing = false
-    private(set) var isRestoring = false
-
-    /// Set when a purchase or restore fails for a reason the user should see.
-    /// A deliberate cancellation is not one of them.
-    private(set) var failureMessage: String?
 
     private let cache: EntitlementCache
 
@@ -55,59 +45,13 @@ final class PurchaseStore {
         )
     }
 
-    /// Loads the current entitlement and the products to show on the paywall.
-    /// Both are best effort: a network failure leaves the cached entitlement
-    /// in place and the paywall falls back to its bundled price copy.
+    /// Refreshes the current entitlement. Product presentation belongs to
+    /// Superwall, so the app does not maintain a second local product catalog.
     func refresh() async {
         guard PurchaseConfiguration.isConfigured, !ScreenshotConfiguration.current.isEnabled else { return }
 
         if let info = try? await Purchases.shared.customerInfo() {
             apply(info)
-        }
-
-        if let offering = try? await Purchases.shared.offerings().current {
-            annual = offering.annual ?? offering.package(identifier: "annual")
-            weekly = offering.weekly ?? offering.package(identifier: "weekly")
-        }
-    }
-
-    // MARK: - Purchase
-
-    func purchase(_ plan: PaywallPlanChoice, source: Analytics.PaywallSource) async {
-        guard let package = package(for: plan) else {
-            failureMessage = String(localized: "paywall.error.unavailable")
-            return
-        }
-
-        failureMessage = nil
-        isPurchasing = true
-        defer { isPurchasing = false }
-
-        Analytics.purchaseStarted(plan: plan.analyticsPlan, source: source)
-
-        do {
-            let result = try await Purchases.shared.purchase(package: package)
-            if result.userCancelled {
-                // Not a failure. Counting it separately is what tells a
-                // pricing problem apart from a broken checkout.
-                Analytics.purchaseFailed(
-                    plan: plan.analyticsPlan,
-                    source: source,
-                    errorCode: "user_cancelled"
-                )
-                return
-            }
-            apply(result.customerInfo)
-            if isEntitled {
-                Analytics.purchaseCompleted(plan: plan.analyticsPlan, source: source)
-            }
-        } catch {
-            failureMessage = Self.message(for: error)
-            Analytics.purchaseFailed(
-                plan: plan.analyticsPlan,
-                source: source,
-                errorCode: Self.code(for: error)
-            )
         }
     }
 
@@ -116,14 +60,7 @@ final class PurchaseStore {
     /// same paywall wondering whether the button worked.
     @discardableResult
     func restore() async -> Bool {
-        guard PurchaseConfiguration.isConfigured else {
-            failureMessage = String(localized: "paywall.error.unavailable")
-            return false
-        }
-
-        failureMessage = nil
-        isRestoring = true
-        defer { isRestoring = false }
+        guard PurchaseConfiguration.isConfigured else { return false }
 
         do {
             let info = try await Purchases.shared.restorePurchases()
@@ -132,12 +69,10 @@ final class PurchaseStore {
                 Analytics.restoreCompleted(result: .entitled)
             } else {
                 Analytics.restoreCompleted(result: .nothingToRestore)
-                failureMessage = String(localized: "paywall.error.nothingToRestore")
             }
             return isEntitled
         } catch {
             Analytics.restoreCompleted(result: .failed)
-            failureMessage = Self.message(for: error)
             return false
         }
     }
@@ -149,53 +84,6 @@ final class PurchaseStore {
         isEntitled = entitled
         cache.save(entitled)
         RevenueCatPurchaseController.shared.pushToSuperwall(entitled)
-    }
-
-    private func package(for plan: PaywallPlanChoice) -> Package? {
-        switch plan {
-        case .annual: annual
-        case .weekly: weekly
-        }
-    }
-
-    // MARK: - Error presentation
-
-    /// Store errors reach the user as one localized sentence. The underlying
-    /// code goes to analytics instead, where it is useful and where it cannot
-    /// confuse anyone.
-    private static func message(for error: Error) -> String {
-        if let rcError = error as? RevenueCat.ErrorCode {
-            switch rcError {
-            case .networkError, .offlineConnectionError:
-                return String(localized: "paywall.error.network")
-            case .purchaseNotAllowedError, .paymentPendingError:
-                return String(localized: "paywall.error.notAllowed")
-            default:
-                break
-            }
-        }
-        return String(localized: "paywall.error.generic")
-    }
-
-    private static func code(for error: Error) -> String {
-        if let rcError = error as? RevenueCat.ErrorCode {
-            return String(rcError.rawValue)
-        }
-        return String((error as NSError).code)
-    }
-}
-
-/// The two tiers, as the app's own type. `FactoryPaywallView`'s `PaywallPlan`
-/// is not used because Nightwatch draws its own paywall.
-enum PaywallPlanChoice: Hashable {
-    case annual
-    case weekly
-
-    var analyticsPlan: Analytics.Plan {
-        switch self {
-        case .annual: .annual
-        case .weekly: .weekly
-        }
     }
 }
 

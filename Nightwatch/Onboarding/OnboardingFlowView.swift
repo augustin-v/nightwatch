@@ -23,7 +23,7 @@ struct OnboardingFlowView: View {
                 // A hand-off, not a dismissal: `onContinue` fires only once a
                 // purchase or restore has actually granted the entitlement,
                 // so onboarding cannot be completed past the paywall for free.
-                PaywallView(source: .onboarding) {
+                RemotePaywallGate(source: .onboarding) {
                     Analytics.onboardingCompleted()
                     dismissPaywall()
                     onFinishedOnboarding()

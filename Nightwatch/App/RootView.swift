@@ -39,7 +39,7 @@ struct RootView: View {
             // and never subscribed, and by anyone whose subscription lapsed.
             // The entitlement is RevenueCat's answer, seeded from the last
             // known value so a paying user does not see this flash on launch.
-            PaywallView(source: .relaunch) {}
+            RemotePaywallGate(source: .relaunch) {}
         } else {
             tabs
                 .task { await purchases.refresh() }
