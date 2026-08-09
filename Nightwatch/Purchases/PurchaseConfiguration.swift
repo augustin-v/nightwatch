@@ -9,11 +9,10 @@ enum PurchaseConfiguration {
     /// Superwall project 28487, iOS app 52866 (`com.augustinv.nightwatch`).
     static let superwallAPIKey = "pk_VGAxSOhBn4gj3H1S9wi-M"
 
-    /// RevenueCat public SDK key. Empty until the RevenueCat project exists;
-    /// see `REVENUECAT_SETUP_PROMPT.md`. This is the single swap point: the
-    /// rest of the purchase stack is written against the real SDKs and needs
-    /// no further changes when the key lands.
-    static let revenueCatAPIKey = ""
+    /// RevenueCat public SDK key. Project `proj39bec68b`, iOS app
+    /// `app481c4ca4d7`, offering `default` with the `$rc_annual` and
+    /// `$rc_weekly` packages.
+    static let revenueCatAPIKey = "appl_FktSzBBpPrPEwppWSvqWkXiGyEr"
 
     /// Must match the Superwall entitlement identifier exactly. If these two
     /// strings ever drift apart, Superwall and RevenueCat will disagree about

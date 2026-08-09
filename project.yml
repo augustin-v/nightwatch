@@ -92,6 +92,13 @@ targets:
       testTargets:
         - NightwatchTests
       testable: true
+      # Local StoreKit products, mirroring the real App Store Connect
+      # subscription group. Sandbox purchases against the live products are
+      # not possible while they sit in MISSING_METADATA, and this is how the
+      # purchase path, the localized prices and the computed savings badge
+      # get exercised before then. Debug only; it has no effect on release.
+      environmentVariables: []
+      storeKitConfiguration: Nightwatch.storekit
   NightwatchTests:
     type: bundle.unit-test
     platform: iOS

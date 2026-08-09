@@ -1,0 +1,65 @@
+{
+  "identifier" : "NIGHTWATCH_LOCAL",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "22297381",
+      "localizations" : [],
+      "name" : "Nightwatch",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "39.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6799666881",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Aurora forecasts, alerts and the oval map.",
+              "displayName" : "Nightwatch Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.augustinv.nightwatch.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Nightwatch Annual",
+          "subscriptionGroupID" : "22297381",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6799667115",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Aurora forecasts, alerts and the oval map.",
+              "displayName" : "Nightwatch Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.augustinv.nightwatch.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Nightwatch Weekly",
+          "subscriptionGroupID" : "22297381",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
