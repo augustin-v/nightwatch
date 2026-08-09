@@ -22,13 +22,21 @@ struct NightTimeline: View {
                 .font(Nightwatch.TypeScale.sectionHeading)
                 .foregroundStyle(palette.textSecondary)
 
-            VStack(spacing: Nightwatch.Space.s) {
-                ribbon
-                    .frame(height: 132)
-                axis
+            // A night that never leaves zero has no shape to draw. Plotting
+            // it anyway leaves a tall black rectangle under the heading that
+            // looks like a rendering failure, so say the flat thing instead.
+            if peak > 0 {
+                VStack(spacing: Nightwatch.Space.s) {
+                    ribbon
+                        .frame(height: 132)
+                    axis
+                }
+            } else {
+                Text("tonight.hourlyStrip.flat")
+                    .font(Nightwatch.TypeScale.body)
+                    .foregroundStyle(palette.textTertiary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .padding(Nightwatch.Space.l)
-            .background(palette.surface, in: RoundedRectangle(cornerRadius: Nightwatch.Radius.card))
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text("tonight.hourlyStrip.heading"))

@@ -24,14 +24,12 @@ struct FactorBreakdown: View {
                 .font(Nightwatch.TypeScale.sectionHeading)
                 .foregroundStyle(palette.textSecondary)
 
-            VStack(spacing: Nightwatch.Space.m) {
+            VStack(spacing: Nightwatch.Space.l) {
                 row(.activity, value: hour.activity, symbol: "sparkles", reading: activityReading)
                 row(.clouds, value: hour.clouds, symbol: "cloud", reading: cloudReading)
                 row(.darkness, value: hour.darkness, symbol: "moon.stars", reading: darknessReading)
                 row(.moon, value: hour.moon, symbol: "moonphase.waning.gibbous", reading: moonReading)
             }
-            .padding(Nightwatch.Space.l)
-            .background(palette.surface, in: RoundedRectangle(cornerRadius: Nightwatch.Radius.card))
         }
     }
 

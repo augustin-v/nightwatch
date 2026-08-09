@@ -9,12 +9,9 @@ import AuroraCore
 /// the same vertical rhythm, which is what makes them scannable against each
 /// other, and the score dial is the only element that changes size-of-signal.
 struct NightsAheadView: View {
-    let appState: AppState
-
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var model = NightsAheadModel()
     @State private var services = AppServices.shared
-    @State private var showingPaywall = false
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
     private var palette: Nightwatch.Palette { .forMode(mode) }
@@ -30,48 +27,37 @@ struct NightsAheadView: View {
         .nightwatchTheme(mode)
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
-        .premiumSheet(isPresented: $showingPaywall, appState: appState)
-        .task(id: ForecastTrigger(placeID: services.selectedPlaceID, isPremium: appState.isPremium)) {
-            if appState.isPremium { await model.syncToActiveLocation() }
-        }
+        .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
     }
 
     @ViewBuilder
     private var content: some View {
-        if !appState.isPremium {
-            LockedFeature(
-                symbol: "calendar",
-                title: "nights.locked.title",
-                promise: "nights.locked.promise",
-                specifics: [
-                    "nights.locked.specific.compare",
-                    "nights.locked.specific.window",
-                    "nights.locked.specific.reason"
-                ],
-                onUnlock: { showingPaywall = true }
-            )
-        } else {
-            switch model.state {
-            case .loading:
-                ProgressView()
-                    .controlSize(.large)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            case .needsLocation:
-                unavailable("nights.empty.needsLocation")
-            case .unavailable:
-                unavailable("nights.empty.unavailable")
-            case .ready(let reports):
-                ScrollView {
-                    LazyVStack(spacing: Nightwatch.Space.l) {
-                        ForEach(reports, id: \.nightOf) { report in
-                            NightCard(report: report)
+        switch model.state {
+        case .loading:
+            ProgressView()
+                .controlSize(.large)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        case .needsLocation:
+            unavailable("nights.empty.needsLocation")
+        case .unavailable:
+            unavailable("nights.empty.unavailable")
+        case .ready(let reports):
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    ForEach(Array(reports.enumerated()), id: \.element.nightOf) { index, report in
+                        if index > 0 {
+                            Rectangle()
+                                .fill(palette.hairline)
+                                .frame(height: 1)
+                                .padding(.vertical, Nightwatch.Space.l)
                         }
+                        NightCard(report: report)
                     }
-                    .padding(.horizontal, Nightwatch.Space.l)
-                    .padding(.bottom, Nightwatch.Space.xxl * 2)
                 }
-                .refreshable { await model.refresh() }
+                .padding(.horizontal, Nightwatch.Space.l)
+                .padding(.bottom, Nightwatch.Space.xxl * 2)
             }
+            .refreshable { await model.refresh() }
         }
     }
 
@@ -86,6 +72,11 @@ struct NightsAheadView: View {
 }
 
 /// One night, in the fixed shape every other night on this screen shares.
+///
+/// No container. The nights are separated by a hairline rule, which does the
+/// one job the card was actually doing here (telling you where one night ends
+/// and the next begins) without boxing three identical rectangles onto a
+/// screen whose whole purpose is comparing them.
 private struct NightCard: View {
     let report: NightForecastReport
 
@@ -134,16 +125,7 @@ private struct NightCard: View {
 
             windowChip
         }
-        .padding(Nightwatch.Space.l)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: Nightwatch.Radius.card)
-                .fill(palette.surface)
-                .overlay(
-                    RoundedRectangle(cornerRadius: Nightwatch.Radius.card)
-                        .strokeBorder(palette.rampColor(for: peakScore).opacity(0.28), lineWidth: 1)
-                )
-        )
         .accessibilityElement(children: .combine)
     }
 
@@ -168,9 +150,6 @@ private struct NightCard: View {
                     .foregroundStyle(palette.textTertiary)
             }
         }
-        .padding(.horizontal, Nightwatch.Space.m)
-        .padding(.vertical, Nightwatch.Space.s)
-        .background(palette.surfaceRaised, in: Capsule())
     }
 }
 

@@ -425,271 +425,6 @@
         }
       }
     },
-    "alerts.locked.promise": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "One notification when a night is genuinely worth going outside for."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ett varsel når en natt virkelig er verdt å gå ut for."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En avisering när en natt verkligen är värd att gå ut för."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yksi hälytys, kun yö on aidosti sen arvoinen, että lähdet ulos."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Én notifikation, når en nat virkelig er værd at gå udenfor for."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eine Benachrichtigung, wenn eine Nacht wirklich einen Blick nach draußen wert ist."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eén melding wanneer een nacht het echt waard is om naar buiten te gaan."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Une alerte lorsqu'une nuit vaut vraiment la peine de sortir."
-          }
-        }
-      }
-    },
-    "alerts.locked.specific.place": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Follows whichever place you have selected."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Følger stedet du har valgt."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Följer den plats du har valt."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seuraa valitsemaasi paikkaa."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Følger det sted, du har valgt."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Folgt dem Ort, den du ausgewählt hast."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Volgt de plek die je hebt geselecteerd."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Suit le lieu que vous avez sélectionné."
-          }
-        }
-      }
-    },
-    "alerts.locked.specific.quiet": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Quiet hours, so nothing wakes you unless you asked it to."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stille timer, så ingenting vekker deg med mindre du har bedt om det."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tysta timmar, så att inget väcker dig om du inte har bett om det."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hiljaiset tunnit, jottei mikään herätä sinua, ellet ole niin pyytänyt."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stille timer, så intet vækker dig, medmindre du har bedt om det."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ruhezeiten, damit dich nichts weckt, außer du hast es so gewollt."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stille uren, zodat niets je wekt tenzij je daarom hebt gevraagd."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Des heures silencieuses, pour que rien ne vous réveille sauf si vous l'avez demandé."
-          }
-        }
-      }
-    },
-    "alerts.locked.specific.threshold": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Choose how good a night has to be before it is worth your sleep."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Velg hvor god en natt må være før den er verdt søvnen din."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Välj hur bra en natt måste vara innan den är värd din sömn."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Valitse, kuinka hyvän yön täytyy olla, jotta se on unesi arvoinen."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vælg, hvor god en nat skal være, før den er værd din søvn."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lege fest, wie gut eine Nacht sein muss, bevor sie deinen Schlaf wert ist."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kies hoe goed een nacht moet zijn voordat het je slaap waard is."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choisissez à partir de quel niveau une nuit vaut la peine de sacrifier votre sommeil."
-          }
-        }
-      }
-    },
-    "alerts.locked.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Be told, instead of remembering to check"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bli varslet, i stedet for å huske å sjekke"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bli informerad, istället för att komma ihåg att kolla"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saat tiedon, sen sijaan että muistaisit tarkistaa"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bliv underrettet, i stedet for at huske at tjekke"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Informiert werden, statt ans Nachschauen zu denken"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Word geïnformeerd, in plaats van te moeten onthouden om te kijken"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soyez averti, plutôt que d'avoir à penser à vérifier"
-          }
-        }
-      }
-    },
     "alerts.quiet.from": {
       "extractionState": "manual",
       "localizations": {
@@ -1909,271 +1644,6 @@
         }
       }
     },
-    "map.locked.promise": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "See how far the edge of the aurora is from you, as a distance you can act on."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se hvor langt unna kanten av nordlyset er, som en avstand du kan handle på."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se hur långt bort norrskenets kant är, som ett avstånd du kan agera på."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Katso, kuinka kaukana revontulten reuna on sinusta, matkana johon voit reagoida."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se hvor langt væk kanten af nordlyset er, som en afstand du kan handle på."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sieh, wie weit der Rand des Polarlichts von dir entfernt ist, als Entfernung, mit der du etwas anfangen kannst."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zie hoe ver de rand van het noorderlicht bij je vandaan is, als een afstand waar je iets mee kunt."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Découvrez à quelle distance se trouve le bord de l'aurore, une distance sur laquelle vous pouvez agir."
-          }
-        }
-      }
-    },
-    "map.locked.specific.distance": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Your distance to it, so you know whether driving north is worth it."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Din avstand til den, så du vet om det er verdt å kjøre nordover."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ditt avstånd till den, så att du vet om det är värt att köra norrut."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Etäisyytesi siihen, jotta tiedät kannattaako ajaa pohjoiseen."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Din afstand til den, så du ved, om det er værd at køre nordpå."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deine Entfernung dazu, damit du weißt, ob eine Fahrt nach Norden sich lohnt."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jouw afstand ertoe, zodat je weet of noordwaarts rijden de moeite waard is."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Votre distance jusqu'à lui, pour savoir si rouler vers le nord en vaut la peine."
-          }
-        }
-      }
-    },
-    "map.locked.specific.edge": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Tonight's oval edge, drawn from the current Kp forecast."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kveldens ovalkant, tegnet ut fra gjeldende Kp-varsel."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kvällens ovalkant, ritad utifrån aktuell Kp-prognos."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tämän illan ovaalin reuna, piirretty nykyisen Kp-ennusteen mukaan."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aftenens ovalkant, tegnet ud fra den aktuelle Kp-prognose."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Der heutige Ovalrand, gezeichnet nach der aktuellen Kp-Vorhersage."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De ovaalrand van vanavond, getekend op basis van de actuele Kp-voorspelling."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Le bord de l'ovale de ce soir, tracé à partir de la prévision Kp actuelle."
-          }
-        }
-      }
-    },
-    "map.locked.specific.tonight": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Redrawn every time the space weather forecast changes."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tegnet på nytt hver gang romværvarselet endres."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ritas om varje gång rymdväderprognosen ändras."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Piirretään uudelleen aina, kun avaruussääennuste muuttuu."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tegnet igen, hver gang rumvejrsprognosen ændres."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neu gezeichnet, sobald sich die Weltraumwettervorhersage ändert."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opnieuw getekend telkens wanneer de ruimteweervoorspelling verandert."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retracé à chaque changement de la prévision météo spatiale."
-          }
-        }
-      }
-    },
-    "map.locked.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Where the oval sits tonight"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Der nordlysovalen ligger i kveld"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Var norrskensovalen ligger i kväll"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Missä revontuliovaali on tänä yönä"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hvor nordlysovalen ligger i aften"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wo das Polarlichtoval heute Nacht liegt"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waar de aurora-ovaal vanavond ligt"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Où se trouve l'ovale auroral ce soir"
-          }
-        }
-      }
-    },
     "map.subline.kp": {
       "extractionState": "manual",
       "localizations": {
@@ -2435,271 +1905,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impossible de charger les prévisions. Tirez vers le bas pour réessayer."
-          }
-        }
-      }
-    },
-    "nights.locked.promise": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Pick the right night before you commit to the drive, not after it."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Velg riktig natt før du legger ut på kjøreturen, ikke etterpå."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Välj rätt natt innan du ger dig ut på bilturen, inte efteråt."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Valitse oikea yö ennen kuin lähdet ajomatkalle, et sen jälkeen."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vælg den rigtige nat, før du begiver dig ud på turen, ikke bagefter."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wähle die richtige Nacht, bevor du dich auf die Fahrt machst, nicht danach."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kies de juiste nacht voordat je in de auto stapt, niet erna."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choisissez la bonne nuit avant de prendre la route, pas après."
-          }
-        }
-      }
-    },
-    "nights.locked.specific.compare": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "All three nights side by side, scored exactly like tonight."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle tre nettene side om side, vurdert nøyaktig som i kveld."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alla tre nätterna sida vid sida, bedömda precis som i kväll."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kaikki kolme yötä rinnakkain, arvioituna aivan kuin tänä iltana."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle tre nætter side om side, vurderet præcis som i aften."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle drei Nächte im direkten Vergleich, bewertet genau wie heute Nacht."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle drie de nachten naast elkaar, beoordeeld net als vanavond."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Les trois nuits côte à côte, évaluées exactement comme ce soir."
-          }
-        }
-      }
-    },
-    "nights.locked.specific.reason": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "What would stop you on each night, named."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Det som ville stoppet deg hver natt, navngitt."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Det som skulle stoppa dig varje natt, namngivet."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se, mikä estäisi sinut kunakin yönä, nimettynä."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Det, der ville stoppe dig hver nat, navngivet."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Was dich in jeder Nacht stoppen würde, beim Namen genannt."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wat je elke nacht zou tegenhouden, met naam genoemd."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ce qui vous arrêterait chaque nuit, nommé clairement."
-          }
-        }
-      }
-    },
-    "nights.locked.specific.window": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "The best viewing window for each one."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Det beste vinduet for hver av dem."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bästa fönstret för var och en."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paras ikkuna kullekin yölle."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Det bedste vindue for hver af dem."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Das beste Fenster für jede einzelne."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Het beste tijdvenster voor elke nacht."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La meilleure fenêtre pour chacune."
-          }
-        }
-      }
-    },
-    "nights.locked.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "The next three nights"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De neste tre nettene"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De kommande tre nätterna"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seuraavat kolme yötä"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De næste tre nætter"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Die nächsten drei Nächte"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De komende drie nachten"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Les trois prochaines nuits"
           }
         }
       }
@@ -5415,6 +4620,48 @@
             "state": "new",
             "value": "Save where I am"
           }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lagre min posisjon"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spara min plats"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tallenna sijaintini"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gem min placering"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standort speichern"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewaar mijn locatie"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrer ma position"
+          }
         }
       }
     },
@@ -5426,6 +4673,48 @@
             "state": "new",
             "value": "Save the spot you actually watch from, so you can check it without driving there first."
           }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lagre stedet du faktisk følger med fra, så du kan sjekke det uten å kjøre dit først."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spara platsen du faktiskt tittar från, så att du kan kolla den utan att köra dit först."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tallenna paikka, jota oikeasti tarkkailet, jotta voit tarkistaa sen ajamatta sinne ensin."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gem stedet du faktisk kigger fra, så du kan tjekke det uden at køre derhen først."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichere den Ort, von dem aus du wirklich beobachtest, damit du ihn prüfen kannst, ohne vorher hinzufahren."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewaar de plek waar je écht vanaf kijkt, zodat je die kunt checken zonder er eerst naartoe te rijden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrez le site depuis lequel vous observez vraiment, pour pouvoir le consulter sans devoir d'abord vous y rendre."
+          }
         }
       }
     },
@@ -5436,6 +4725,48 @@
           "stringUnit": {
             "state": "new",
             "value": "Nowhere saved yet"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen steder lagret ennå"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga platser sparade än"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vielä tallennettuja paikkoja"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen steder gemt endnu"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Orte gespeichert"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen plekken bewaard"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun lieu enregistré pour l'instant"
           }
         }
       }
@@ -5546,59 +4877,6 @@
         }
       }
     },
-    "places.locked.addMore": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Save the cabin, the dark sky site, wherever you actually watch from."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lagre hytta, det mørke stedet, der du faktisk følger med fra."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spara stugan, den mörka platsen, var du än faktiskt tittar från."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tallenna mökki, pimeä paikka, mistä ikinä oikeasti tarkkailet."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gem hytten, det mørke sted, der hvor du faktisk kigger fra."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Speichere die Hütte, den dunklen Ort, wo auch immer du wirklich hinschaust."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewaar de hut, de donkere plek, waar je ook echt kijkt."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enregistrez le chalet, le site sombre, partout où vous observez vraiment."
-          }
-        }
-      }
-    },
     "places.rename": {
       "extractionState": "manual",
       "localizations": {
@@ -5701,59 +4979,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lieux"
-          }
-        }
-      }
-    },
-    "premium.unlock": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Unlock Nightwatch"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lås opp Nightwatch"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lås upp Nightwatch"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Avaa Nightwatch"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lås Nightwatch op"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nightwatch freischalten"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ontgrendel Nightwatch"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Débloquer Nightwatch"
           }
         }
       }
@@ -7980,6 +7205,59 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meilleur moment : %1$@, atteignant %2$@."
+          }
+        }
+      }
+    },
+    "tonight.hourlyStrip.flat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "No hour tonight rises above zero."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen av nattens timer stiger over null."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen av nattens timmar stiger över noll."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yksikään tämän yön tunneista ei nouse nollan yläpuolelle."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen af nattens timer stiger over nul."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In dieser Nacht steigt keine Stunde über null."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vannacht komt geen enkel uur boven nul uit."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune heure cette nuit ne dépasse zéro."
           }
         }
       }

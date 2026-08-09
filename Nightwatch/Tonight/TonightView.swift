@@ -7,8 +7,6 @@ import AuroraCore
 /// it?", then "why not / why yes?", then "when exactly?". Anything that does
 /// not answer one of those three is not on this screen.
 struct TonightView: View {
-    let appState: AppState
-
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var model = TonightModel()
     @State private var services = AppServices.shared
@@ -31,7 +29,7 @@ struct TonightView: View {
         .nightwatchTheme(mode)
         .tint(palette.rampColor(for: currentPeakScore))
         .preferredColorScheme(.dark)
-        .sheet(isPresented: $showingAlerts) { AlertsView(appState: appState) }
+        .sheet(isPresented: $showingAlerts) { AlertsView() }
         .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
     }
 

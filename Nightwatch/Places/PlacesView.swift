@@ -8,23 +8,13 @@ import AuroraCore
 /// the loudest thing on each row and "Follow my location" is a first-class
 /// entry rather than an absence of choice.
 struct PlacesView: View {
-    let appState: AppState
-
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var services = AppServices.shared
-    @State private var showingPaywall = false
     @State private var showingAddSheet = false
     @State private var renaming: SavedPlace?
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
     private var palette: Nightwatch.Palette { .forMode(mode) }
-
-    /// One saved place on the free tier, per spec §3. The limit is enforced on
-    /// *adding*, never by hiding places the user already saved: silently
-    /// dropping someone's cabin when a subscription lapses would be hostile.
-    private var canAddAnother: Bool {
-        appState.isPremium || services.places.places.isEmpty
-    }
 
     var body: some View {
         NavigationStack {
@@ -35,11 +25,7 @@ struct PlacesView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            if canAddAnother {
-                                showingAddSheet = true
-                            } else {
-                                showingPaywall = true
-                            }
+                            showingAddSheet = true
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -56,7 +42,6 @@ struct PlacesView: View {
         .nightwatchTheme(mode)
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
-        .premiumSheet(isPresented: $showingPaywall, appState: appState)
     }
 
     private var list: some View {
@@ -95,10 +80,6 @@ struct PlacesView: View {
 
                 if services.places.places.isEmpty {
                     emptyPrompt
-                }
-
-                if !canAddAnother {
-                    upgradeRow
                 }
 
                 Text("places.footnote")
@@ -195,28 +176,6 @@ struct PlacesView: View {
         .padding(.vertical, Nightwatch.Space.xxl)
         .padding(.horizontal, Nightwatch.Space.m)
         .frame(maxWidth: .infinity)
-    }
-
-    private var upgradeRow: some View {
-        Button { showingPaywall = true } label: {
-            HStack(spacing: Nightwatch.Space.m) {
-                Image(systemName: "plus.circle")
-                    .font(.body)
-                    .frame(width: 22)
-                    .foregroundStyle(palette.ramp[2])
-                Text("places.locked.addMore")
-                    .font(Nightwatch.TypeScale.body)
-                    .foregroundStyle(palette.textSecondary)
-                    .multilineTextAlignment(.leading)
-                Spacer(minLength: 0)
-            }
-            .padding(Nightwatch.Space.m)
-            .background(
-                RoundedRectangle(cornerRadius: Nightwatch.Radius.chip)
-                    .strokeBorder(palette.hairline, style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
-            )
-        }
-        .buttonStyle(.plain)
     }
 
     /// Coordinates are shown to two decimals: enough to tell two saved spots

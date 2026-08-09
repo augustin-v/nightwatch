@@ -12,12 +12,9 @@ import AuroraCore
 /// oval, computed from tonight's peak Kp, plus one sentence putting a number
 /// on your distance from it. The overlay is the answer, not decoration.
 struct OvalMapView: View {
-    let appState: AppState
-
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var model = OvalMapModel()
     @State private var services = AppServices.shared
-    @State private var showingPaywall = false
     @State private var camera: MapCameraPosition = .automatic
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
@@ -34,27 +31,12 @@ struct OvalMapView: View {
         .nightwatchTheme(mode)
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
-        .premiumSheet(isPresented: $showingPaywall, appState: appState)
-        .task(id: ForecastTrigger(placeID: services.selectedPlaceID, isPremium: appState.isPremium)) {
-            if appState.isPremium { await model.syncToActiveLocation() }
-        }
+        .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
     }
 
     @ViewBuilder
     private var content: some View {
-        if !appState.isPremium {
-            LockedFeature(
-                symbol: "globe.europe.africa",
-                title: "map.locked.title",
-                promise: "map.locked.promise",
-                specifics: [
-                    "map.locked.specific.edge",
-                    "map.locked.specific.distance",
-                    "map.locked.specific.tonight"
-                ],
-                onUnlock: { showingPaywall = true }
-            )
-        } else if let reading = model.reading {
+        if let reading = model.reading {
             ZStack(alignment: .top) {
                 map(for: reading)
                 distanceCard(reading)

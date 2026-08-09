@@ -10,8 +10,6 @@ import AuroraCore
 /// colours used on the Tonight screen, so the setting and the thing it
 /// controls are visibly the same scale.
 struct AlertsView: View {
-    let appState: AppState
-
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @AppStorage(AlertSettings.enabledKey) private var alertsEnabled = false
     @AppStorage(AlertSettings.thresholdKey) private var threshold = AlertSettings.defaultThreshold
@@ -20,7 +18,6 @@ struct AlertsView: View {
     @AppStorage(AlertSettings.quietEndKey) private var quietEnd = AlertSettings.defaultQuietEnd
 
     @Environment(\.dismiss) private var dismiss
-    @State private var showingPaywall = false
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
     private var palette: Nightwatch.Palette { .forMode(mode) }
@@ -41,47 +38,32 @@ struct AlertsView: View {
         .nightwatchTheme(mode)
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
-        .premiumSheet(isPresented: $showingPaywall, appState: appState)
     }
 
     @ViewBuilder
     private var content: some View {
-        if !appState.isPremium {
-            LockedFeature(
-                symbol: "bell.badge",
-                title: "alerts.locked.title",
-                promise: "alerts.locked.promise",
-                specifics: [
-                    "alerts.locked.specific.threshold",
-                    "alerts.locked.specific.quiet",
-                    "alerts.locked.specific.place"
-                ],
-                onUnlock: { showingPaywall = true }
-            )
-        } else {
-            ScrollView {
-                VStack(alignment: .leading, spacing: Nightwatch.Space.xl) {
-                    masterToggle
-                    thresholdSection
-                        .opacity(alertsEnabled ? 1 : 0.4)
-                        .disabled(!alertsEnabled)
-                    quietSection
-                        .opacity(alertsEnabled ? 1 : 0.4)
-                        .disabled(!alertsEnabled)
-                    footnote
-                }
-                .padding(.horizontal, Nightwatch.Space.l)
-                .padding(.bottom, Nightwatch.Space.xxl)
+        ScrollView {
+            VStack(alignment: .leading, spacing: Nightwatch.Space.xl) {
+                masterToggle
+                thresholdSection
+                    .opacity(alertsEnabled ? 1 : 0.4)
+                    .disabled(!alertsEnabled)
+                quietSection
+                    .opacity(alertsEnabled ? 1 : 0.4)
+                    .disabled(!alertsEnabled)
+                footnote
             }
-            .onChange(of: alertsEnabled) { _, enabled in
-                if enabled { Task { await AlertSettings.requestAuthorizationIfNeeded() } }
-                AlertSettings.rescheduleNow()
-            }
-            .onChange(of: threshold) { _, _ in AlertSettings.rescheduleNow() }
-            .onChange(of: quietHoursEnabled) { _, _ in AlertSettings.rescheduleNow() }
-            .onChange(of: quietStart) { _, _ in AlertSettings.rescheduleNow() }
-            .onChange(of: quietEnd) { _, _ in AlertSettings.rescheduleNow() }
+            .padding(.horizontal, Nightwatch.Space.l)
+            .padding(.bottom, Nightwatch.Space.xxl)
         }
+        .onChange(of: alertsEnabled) { _, enabled in
+            if enabled { Task { await AlertSettings.requestAuthorizationIfNeeded() } }
+            AlertSettings.rescheduleNow()
+        }
+        .onChange(of: threshold) { _, _ in AlertSettings.rescheduleNow() }
+        .onChange(of: quietHoursEnabled) { _, _ in AlertSettings.rescheduleNow() }
+        .onChange(of: quietStart) { _, _ in AlertSettings.rescheduleNow() }
+        .onChange(of: quietEnd) { _, _ in AlertSettings.rescheduleNow() }
     }
 
     private var masterToggle: some View {

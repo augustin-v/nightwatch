@@ -3,10 +3,15 @@ import AuroraCore
 
 /// The one thing the whole app exists to show: tonight's answer.
 ///
-/// Hierarchy is deliberate and ranked — the band word is the answer, the score
+/// Hierarchy is deliberate and ranked: the band word is the answer, the score
 /// arc is the confidence behind it, the limiting-factor sentence is the *why*
 /// (the thing competitors never say), and the window is what you actually act
-/// on. Nothing else is allowed on this card.
+/// on. Nothing else is allowed near it.
+///
+/// It sits directly on the night background with no container. A card would
+/// draw a box around the one thing that should feel like the screen itself,
+/// and the score is already encoded by the backdrop's tint, so the box was
+/// carrying no information the type and the arc were not already carrying.
 struct VerdictHero: View {
     let band: VisibilityBand
     let peakScore: Double
@@ -47,9 +52,7 @@ struct VerdictHero: View {
 
             windowRow
         }
-        .padding(Nightwatch.Space.l)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(cardBackground)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(verbatim: accessibilitySummary))
     }
@@ -71,32 +74,7 @@ struct VerdictHero: View {
                     .foregroundStyle(palette.textTertiary)
             }
         }
-        .padding(.horizontal, Nightwatch.Space.m)
-        .padding(.vertical, Nightwatch.Space.s + 2)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(palette.surfaceRaised, in: RoundedRectangle(cornerRadius: Nightwatch.Radius.chip))
-    }
-
-    /// The card glows from its own verdict colour. The glow is the score, so
-    /// it earns its place — a dead night is visibly flat, a rare night is not.
-    private var cardBackground: some View {
-        let accent = palette.rampColor(for: peakScore)
-        return RoundedRectangle(cornerRadius: Nightwatch.Radius.card)
-            .fill(palette.surface)
-            .overlay(
-                RoundedRectangle(cornerRadius: Nightwatch.Radius.card)
-                    .fill(
-                        LinearGradient(
-                            colors: [accent.opacity(0.22), accent.opacity(0.02)],
-                            startPoint: .topTrailing,
-                            endPoint: .bottomLeading
-                        )
-                    )
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: Nightwatch.Radius.card)
-                    .strokeBorder(accent.opacity(0.35), lineWidth: 1)
-            )
     }
 
     private var accessibilitySummary: String {
@@ -137,7 +115,10 @@ struct ScoreArc: View {
 
     var body: some View {
         let fraction = min(max(score, 0), 100) / 100
-        ZStack {
+        // A centred stroke paints half its width outside the circle's frame.
+        // Inside a padded card that went unnoticed; directly on the screen it
+        // hung over the right edge.
+        return ZStack {
             Circle()
                 .stroke(palette.hairline, lineWidth: lineWidth)
 
@@ -164,5 +145,6 @@ struct ScoreArc: View {
                     .minimumScaleFactor(0.5)
             }
         }
+        .padding(lineWidth / 2)
     }
 }
