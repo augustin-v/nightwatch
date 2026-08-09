@@ -14,18 +14,22 @@ import SwiftUI
 /// because that is the screen you are on when you decide you want to be told.
 struct RootView: View {
     @State private var appState = AppState()
+    @State private var purchases = PurchaseStore.shared
 
     var body: some View {
         if !appState.hasCompletedOnboarding {
             OnboardingFlowView {
                 appState.hasCompletedOnboarding = true
             }
-        } else if !appState.isPremium {
-            PaywallView {
-                appState.isPremium = true
-            }
+        } else if !purchases.isEntitled {
+            // Reached by someone who finished onboarding on an earlier launch
+            // and never subscribed, and by anyone whose subscription lapsed.
+            // The entitlement is RevenueCat's answer, seeded from the last
+            // known value so a paying user does not see this flash on launch.
+            PaywallView(source: .relaunch) {}
         } else {
             tabs
+                .task { await purchases.refresh() }
         }
     }
 
@@ -51,7 +55,7 @@ struct RootView: View {
                     Label { Text("tab.places") } icon: { Image(systemName: "mappin.and.ellipse") }
                 }
 
-            SettingsView(appState: appState)
+            SettingsView()
                 .tabItem {
                     Label { Text("tab.settings") } icon: { Image(systemName: "gearshape") }
                 }

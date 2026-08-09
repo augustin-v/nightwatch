@@ -32,6 +32,7 @@ struct OvalMapView: View {
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
         .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
+        .task { Analytics.featureUsed(.ovalMapViewed) }
     }
 
     @ViewBuilder

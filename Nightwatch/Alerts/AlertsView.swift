@@ -56,12 +56,22 @@ struct AlertsView: View {
             .padding(.horizontal, Nightwatch.Space.l)
             .padding(.bottom, Nightwatch.Space.xxl)
         }
+        .task { Analytics.featureUsed(.alertsOpened) }
         .onChange(of: alertsEnabled) { _, enabled in
             if enabled { Task { await AlertSettings.requestAuthorizationIfNeeded() } }
+            Analytics.featureUsed(enabled ? .alertsEnabled : .alertsDisabled)
             AlertSettings.rescheduleNow()
         }
-        .onChange(of: threshold) { _, _ in AlertSettings.rescheduleNow() }
-        .onChange(of: quietHoursEnabled) { _, _ in AlertSettings.rescheduleNow() }
+        .onChange(of: threshold) { _, _ in
+            // The chosen band is not sent. How often people move it is the
+            // useful signal, and it needs no property to be useful.
+            Analytics.featureUsed(.alertThresholdChanged)
+            AlertSettings.rescheduleNow()
+        }
+        .onChange(of: quietHoursEnabled) { _, enabled in
+            if enabled { Analytics.featureUsed(.quietHoursEnabled) }
+            AlertSettings.rescheduleNow()
+        }
         .onChange(of: quietStart) { _, _ in AlertSettings.rescheduleNow() }
         .onChange(of: quietEnd) { _, _ in AlertSettings.rescheduleNow() }
     }

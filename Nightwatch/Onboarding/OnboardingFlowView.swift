@@ -13,13 +13,39 @@ struct OnboardingFlowView: View {
     var body: some View {
         NightSurface(intensity: 1.0) {
             OnboardingContainerView(firstStep: AppOnboardingStep.hook) { step, advance in
-                stepView(for: step, advance: advance)
+                // Every screen reports its own view and completion, so a drop
+                // between any two of the eleven shows up as a specific screen
+                // rather than one unexplained gap between "started" and
+                // "completed".
+                stepView(for: step, advance: instrumented(step, advance))
+                    .task(id: step) { Analytics.onboardingScreenViewed(step) }
             } paywall: { dismissPaywall in
-                PaywallView {
+                // A hand-off, not a dismissal: `onContinue` fires only once a
+                // purchase or restore has actually granted the entitlement,
+                // so onboarding cannot be completed past the paywall for free.
+                PaywallView(source: .onboarding) {
+                    Analytics.onboardingCompleted()
                     dismissPaywall()
                     onFinishedOnboarding()
                 }
             }
+        }
+        .task { Analytics.onboardingStarted() }
+    }
+
+    /// Wraps a step's advance so completion is logged where the user actually
+    /// leaves the screen, including the two screens that first raise a system
+    /// permission prompt.
+    private func instrumented(
+        _ step: AppOnboardingStep,
+        _ advance: @escaping () -> Void
+    ) -> () -> Void {
+        {
+            if let answerID = answers.answerID(for: step) {
+                Analytics.onboardingAnswered(step, answerID: answerID)
+            }
+            Analytics.onboardingScreenCompleted(step)
+            advance()
         }
     }
 

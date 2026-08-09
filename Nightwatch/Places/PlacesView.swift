@@ -38,6 +38,7 @@ struct PlacesView: View {
                 .sheet(item: $renaming) { place in
                     RenamePlaceSheet(place: place, services: services)
                 }
+                .task { Analytics.featureUsed(.placesViewed) }
         }
         .nightwatchTheme(mode)
         .tint(Nightwatch.Palette.ctaGreen)
@@ -54,6 +55,7 @@ struct PlacesView: View {
                     isSelected: services.selectedPlaceID == nil
                 ) {
                     services.selectedPlaceID = nil
+                    Analytics.featureUsed(.placeSelected)
                 }
 
                 ForEach(services.places.places) { place in
@@ -64,6 +66,7 @@ struct PlacesView: View {
                         isSelected: services.selectedPlaceID == place.id
                     ) {
                         services.selectedPlaceID = place.id
+                        Analytics.featureUsed(.placeSelected)
                     }
                     .contextMenu {
                         Button { renaming = place } label: {
@@ -256,6 +259,9 @@ private struct AddPlaceSheet: View {
                             let place = SavedPlace(name: trimmedName, coordinate: coordinate)
                             services.places.add(place)
                             services.selectedPlaceID = place.id
+                            // The count matters, the name never leaves the
+                            // device.
+                            Analytics.featureUsed(.placeAdded)
                             dismiss()
                         } label: {
                             Text("common.save")

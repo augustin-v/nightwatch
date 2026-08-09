@@ -19,9 +19,11 @@ packages:
   SuperwallKit:
     url: https://github.com/superwall/Superwall-iOS.git
     from: 4.0.0
-  PostHog:
-    url: https://github.com/PostHog/posthog-ios.git
-    from: 3.59.3
+  # First-party analytics. The factory replaced PostHog with its own
+  # Cloudflare Worker + D1 backend and this dependency-free local package,
+  # so the app ships no third-party analytics SDK at all.
+  FactoryAnalytics:
+    path: ../factory/analytics/FactoryAnalytics
   AuroraCore:
     path: AuroraCore
 targets:
@@ -42,8 +44,8 @@ targets:
         product: RevenueCat
       - package: SuperwallKit
         product: SuperwallKit
-      - package: PostHog
-        product: PostHog
+      - package: FactoryAnalytics
+        product: FactoryAnalytics
       - package: AuroraCore
     info:
       path: Nightwatch/Resources/Info.plist

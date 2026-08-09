@@ -28,6 +28,7 @@ struct NightsAheadView: View {
         .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
         .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
+        .task { Analytics.featureUsed(.nightsAheadViewed) }
     }
 
     @ViewBuilder

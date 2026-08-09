@@ -743,6 +743,59 @@
         }
       }
     },
+    "cancel.continueToAppStore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue to Apple"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortsett til Apple"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortsätt till Apple"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jatka Appleen"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortsæt til Apple"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter zu Apple"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorgaan naar Apple"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuer vers Apple"
+          }
+        }
+      }
+    },
     "cancel.detailPlaceholder": {
       "extractionState": "manual",
       "localizations": {
@@ -796,55 +849,55 @@
         }
       }
     },
-    "cancel.detailPrompt": {
+    "cancel.detailPrivacy": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Anything else? (optional)"
+            "value": "Anything you type here stays on this device."
           }
         },
         "nb": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noe mer? (valgfritt)"
+            "value": "Alt du skriver her, blir værende på denne enheten."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Något mer? (valfritt)"
+            "value": "Allt du skriver här stannar på den här enheten."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jotain muuta? (valinnainen)"
+            "value": "Kaikki tähän kirjoittamasi jää tälle laitteelle."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Andet? (valgfrit)"
+            "value": "Alt, hvad du skriver her, forbliver på denne enhed."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sonst noch etwas? (optional)"
+            "value": "Alles, was du hier eingibst, bleibt auf diesem Gerät."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nog iets? (optioneel)"
+            "value": "Alles wat je hier typt, blijft op dit apparaat."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Autre chose à ajouter ? (facultatif)"
+            "value": "Tout ce que vous saisissez ici reste sur cet appareil."
           }
         }
       }
@@ -902,55 +955,55 @@
         }
       }
     },
-    "cancel.next": {
+    "cancel.optional": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Next"
+            "value": "Optional. You can continue without answering."
           }
         },
         "nb": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neste"
+            "value": "Valgfritt. Du kan fortsette uten å svare."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nästa"
+            "value": "Valfritt. Du kan fortsätta utan att svara."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Seuraava"
+            "value": "Valinnainen. Voit jatkaa vastaamatta."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Næste"
+            "value": "Valgfrit. Du kan fortsætte uden at svare."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Weiter"
+            "value": "Optional. Du kannst fortfahren, ohne zu antworten."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Volgende"
+            "value": "Optioneel. Je kunt doorgaan zonder te antwoorden."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Suivant"
+            "value": "Facultatif. Vous pouvez continuer sans répondre."
           }
         }
       }
@@ -1004,6 +1057,59 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pas utilisé"
+          }
+        }
+      }
+    },
+    "cancel.reason.forecastWrong": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The forecast was wrong"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nordlysvarselet var feil"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Norrskensprognosen var fel"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revontuliennuste oli väärä"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nordlysvarselet var forkert"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Polarlicht-Vorhersage war falsch"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De noorderlichtverwachting klopte niet"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La prévision d'aurores boréales était fausse"
           }
         }
       }
@@ -3764,108 +3870,161 @@
         }
       }
     },
-    "paywall.annual.badge": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Best value"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Best verdi"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bäst värde"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paras hinta"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bedst værdi"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bester Preis"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Beste prijs"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meilleur prix"
-          }
-        }
-      }
-    },
     "paywall.annual.priceLabel": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/year"
+            "value": "Billed yearly"
           }
         },
         "nb": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/år"
+            "value": "Fakturert årlig"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/år"
+            "value": "Debiteras årsvis"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/vuosi"
+            "value": "Laskutetaan vuosittain"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/år"
+            "value": "Faktureres årligt"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "39,99 $/Jahr"
+            "value": "Jährliche Abrechnung"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "$39.99/jaar"
+            "value": "Jaarlijks gefactureerd"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "39,99 $/an"
+            "value": "Facturé annuellement"
+          }
+        }
+      }
+    },
+    "paywall.annual.pricePerPeriod": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per year"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per år"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per år"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vuodessa"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ om året"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pro Jahr"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per jaar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ par an"
+          }
+        }
+      }
+    },
+    "paywall.annual.savings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save %@%%"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spar %@%%"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spara %@%%"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Säästä %@%%"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spar %@%%"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spare %@%%"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bespaar %@%%"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Économisez %@%%"
           }
         }
       }
@@ -3976,6 +4135,271 @@
         }
       }
     },
+    "paywall.error.generic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That purchase did not go through. Nothing was charged."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kjøpet ble ikke gjennomført. Ingenting ble belastet."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Köpet gick inte igenom. Inget belopp har dragits."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ostoa ei voitu suorittaa. Sinulta ei veloitettu mitään."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Købet blev ikke gennemført. Der er ikke opkrævet noget."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Kauf konnte nicht abgeschlossen werden. Es wurde nichts berechnet."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De aankoop is niet gelukt. Er is niets in rekening gebracht."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cet achat n'a pas abouti. Aucun montant n'a été débité."
+          }
+        }
+      }
+    },
+    "paywall.error.network": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No connection to the App Store. Check your network and try again."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen forbindelse til App Store. Sjekk nettverket og prøv igjen."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen anslutning till App Store. Kontrollera ditt nätverk och försök igen."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei yhteyttä App Storeen. Tarkista verkkoyhteytesi ja yritä uudelleen."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen forbindelse til App Store. Tjek dit netværk, og prøv igen."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Verbindung zum App Store. Überprüfe dein Netzwerk und versuche es erneut."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen verbinding met de App Store. Controleer je netwerk en probeer het opnieuw."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune connexion à l'App Store. Vérifiez votre connexion et réessayez."
+          }
+        }
+      }
+    },
+    "paywall.error.notAllowed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This device is not allowed to make purchases."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denne enheten har ikke tillatelse til å foreta kjøp."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Den här enheten har inte behörighet att göra köp."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tällä laitteella ei ole lupaa tehdä ostoksia."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denne enhed har ikke tilladelse til at foretage køb."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Gerät ist nicht zum Kauf berechtigt."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit apparaat mag geen aankopen doen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cet appareil n'est pas autorisé à effectuer des achats."
+          }
+        }
+      }
+    },
+    "paywall.error.nothingToRestore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No previous subscription was found for this Apple Account."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fant ikke noe tidligere abonnement for denne Apple-kontoen."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen tidigare prenumeration hittades för det här Apple-kontot."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tälle Apple-tilille ei löytynyt aiempaa tilausta."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der blev ikke fundet et tidligere abonnement for denne Apple-konto."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für diesen Apple-Account wurde kein früheres Abo gefunden."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is geen eerder abonnement gevonden voor dit Apple-account."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun abonnement précédent n'a été trouvé pour ce compte Apple."
+          }
+        }
+      }
+    },
+    "paywall.error.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases are unavailable right now. Please try again later."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kjøp er ikke tilgjengelig akkurat nå. Prøv igjen senere."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Köp är inte tillgängliga just nu. Försök igen senare."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ostot eivät ole juuri nyt käytettävissä. Yritä myöhemmin uudelleen."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Køb er ikke tilgængelige lige nu. Prøv igen senere."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Käufe sind gerade nicht verfügbar. Bitte versuche es später erneut."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankopen zijn nu niet beschikbaar. Probeer het later opnieuw."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les achats sont indisponibles pour le moment. Veuillez réessayer plus tard."
+          }
+        }
+      }
+    },
     "paywall.headline": {
       "extractionState": "manual",
       "localizations": {
@@ -4025,6 +4449,59 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arrêtez de deviner. Commencez à observer."
+          }
+        }
+      }
+    },
+    "paywall.renewalTerms": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renews automatically until cancelled. Cancel any time in your Apple account settings."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fornyes automatisk til det avbestilles. Avbestill når som helst i innstillingene for Apple-kontoen din."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Förnyas automatiskt tills det avbryts. Avbryt när som helst i inställningarna för ditt Apple-konto."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uusiutuu automaattisesti, kunnes se peruutetaan. Peru milloin tahansa Apple-tilisi asetuksista."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fornyes automatisk, indtil det annulleres. Annuller når som helst i indstillingerne for din Apple-konto."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlängert sich automatisch bis zur Kündigung. Kündige jederzeit in den Einstellungen deines Apple-Accounts."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wordt automatisch verlengd totdat je opzegt. Zeg op ieder gewenst moment op via de instellingen van je Apple-account."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se renouvelle automatiquement jusqu'à annulation. Vous pouvez annuler à tout moment dans les réglages de votre compte Apple."
           }
         }
       }
@@ -4135,55 +4612,267 @@
         }
       }
     },
+    "paywall.value.alerts": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An alert only when a night crosses the strength you asked for."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Et varsel bare når en natt når styrken du har bedt om."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En avisering bara när en natt når styrkan du bad om."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hälytys vain silloin, kun yö saavuttaa pyytämäsi voimakkuuden."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En notifikation kun når en nat når den styrke, du har bedt om."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Benachrichtigung nur, wenn eine Nacht die von dir gewählte Stärke erreicht."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een melding alleen wanneer een nacht de door jou gekozen sterkte bereikt."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une alerte seulement lorsqu'une nuit atteint l'intensité que vous avez demandée."
+          }
+        }
+      }
+    },
+    "paywall.value.oval": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The auroral oval on a map, and how far you are from its edge."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nordlysovalen på et kart, og hvor langt du er fra kanten av den."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Norrskensovalen på en karta, och hur långt du är från dess kant."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revontuliovaali kartalla ja kuinka kaukana olet sen reunasta."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nordlysovalen på et kort, og hvor langt du er fra dens kant."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Polarlichtoval auf einer Karte und wie weit du von seinem Rand entfernt bist."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De noorderlicht-ovaal op een kaart, en hoe ver je van de rand ervan bent."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'ovale auroral sur une carte, et votre distance par rapport à son bord."
+          }
+        }
+      }
+    },
+    "paywall.value.tonight": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonight's chance where you actually are, not a global Kp number."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sjansen i kveld der du faktisk er, ikke et globalt Kp-tall."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chansen i kväll där du faktiskt är, inte ett globalt Kp-tal."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tämän illan mahdollisuus siellä, missä oikeasti olet, ei globaali Kp-luku."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chancen i aften der, hvor du faktisk er, ikke et globalt Kp-tal."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Chance heute Nacht genau dort, wo du bist, nicht eine globale Kp-Zahl."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De kans vanavond op de plek waar je echt bent, niet een globaal Kp-getal."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La probabilité de ce soir là où vous êtes réellement, pas un indice Kp global."
+          }
+        }
+      }
+    },
     "paywall.weekly.priceLabel": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/week"
+            "value": "Billed weekly"
           }
         },
         "nb": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/uke"
+            "value": "Fakturert ukentlig"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/vecka"
+            "value": "Debiteras varje vecka"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/viikko"
+            "value": "Laskutetaan viikoittain"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/uge"
+            "value": "Faktureres ugentligt"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "9,99 $/Woche"
+            "value": "Wöchentliche Abrechnung"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "$9.99/week"
+            "value": "Wekelijks gefactureerd"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "9,99 $/semaine"
+            "value": "Facturé chaque semaine"
+          }
+        }
+      }
+    },
+    "paywall.weekly.pricePerPeriod": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per week"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per uke"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per vecka"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ viikossa"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ om ugen"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pro Woche"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per week"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ par semaine"
           }
         }
       }
@@ -4979,271 +5668,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lieux"
-          }
-        }
-      }
-    },
-    "retention.accept": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keep my alerts"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Behold varslene mine"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Behåll mina aviseringar"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pidä hälytykseni"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Behold mine notifikationer"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alerts behalten"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hou mijn meldingen"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Garder mes alertes"
-          }
-        }
-      }
-    },
-    "retention.decline": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No thanks, continue to cancel"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nei takk, fortsett til kansellering"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nej tack, fortsätt att avsluta"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ei kiitos, jatka peruutukseen"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nej tak, fortsæt til annullering"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nein danke, weiter zum Kündigen"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nee bedankt, ga door met opzeggen"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non merci, continuer l'annulation"
-          }
-        }
-      }
-    },
-    "retention.ineligibleTitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You're already on our best plan"
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du har allerede vår beste plan"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du har redan vår bästa plan"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sinulla on jo paras tilauksemme"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du har allerede vores bedste plan"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du hast bereits unseren besten Plan"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je hebt al ons beste abonnement"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vous avez déjà notre meilleure offre"
-          }
-        }
-      }
-    },
-    "retention.offer.description": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No alerts when the sky finally clears. No three-night view. No saved places. The next good night will happen whether or not you're outside for it."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ingen varsler når himmelen endelig klarner. Ingen trenetters oversikt. Ingen lagrede steder. Neste gode natt skjer uansett om du er ute for å se den."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Inga aviseringar när himlen äntligen klarnar upp. Ingen vy över tre nätter. Inga sparade platser. Nästa bra natt inträffar oavsett om du är ute och ser den."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ei hälytyksiä, kun taivas vihdoin kirkastuu. Ei kolmen yön näkymää. Ei tallennettuja paikkoja. Seuraava hyvä yö tulee joka tapauksessa, olitpa ulkona tai et."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ingen notifikationer, når himlen endelig letter. Ingen tre-nætters oversigt. Ingen gemte steder. Den næste gode nat sker, uanset om du er ude for at se den."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine Benachrichtigung, wenn der Himmel endlich aufklart. Keine Drei-Nächte-Ansicht. Keine gespeicherten Orte. Die nächste gute Nacht passiert so oder so, egal ob du draußen bist."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Geen meldingen wanneer de hemel eindelijk opklaart. Geen weergave voor drie nachten. Geen opgeslagen plekken. De volgende goede avond komt er sowieso, of je nu buiten bent of niet."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plus d'alerte quand le ciel se dégage enfin. Plus de vue sur trois nuits. Plus d'endroits enregistrés. La prochaine bonne nuit aura lieu, que vous soyez dehors ou non."
-          }
-        }
-      }
-    },
-    "retention.offer.title": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You'll go back to guessing."
-          }
-        },
-        "nb": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du går tilbake til å gjette."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du går tillbaka till att gissa."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Palaat takaisin arvailemaan."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du går tilbage til at gætte."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Du fängst wieder an zu raten."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je gaat weer gokken."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vous recommencerez à deviner."
           }
         }
       }

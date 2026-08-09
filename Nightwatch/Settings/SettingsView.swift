@@ -5,18 +5,16 @@ import FactoryKit
 /// subscription (routed through the exit/retention flow, never a direct
 /// deep link), contact support, privacy policy, terms of use.
 struct SettingsView: View {
-    let appState: AppState
-
     var body: some View {
         FactorySettingsView(config: settingsConfig) {
-            ManageSubscriptionFlow(appState: appState)
+            ManageSubscriptionFlow()
         }
     }
 
     private var settingsConfig: SettingsConfig {
         SettingsConfig(
             onRestorePurchases: {
-                // Phase 5: wire real RevenueCat restore-purchases call.
+                Task { await PurchaseStore.shared.restore() }
             },
             onContactSupport: {
                 guard let url = URL(string: "mailto:augustin.dev@tutamail.com") else { return }

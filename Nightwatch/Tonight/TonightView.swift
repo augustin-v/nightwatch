@@ -31,6 +31,7 @@ struct TonightView: View {
         .preferredColorScheme(.dark)
         .sheet(isPresented: $showingAlerts) { AlertsView() }
         .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
+        .task { Analytics.featureUsed(.tonightViewed) }
     }
 
     @ViewBuilder

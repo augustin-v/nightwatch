@@ -1,9 +1,11 @@
 import Foundation
 
-/// Minimal shared app state for the scaffold. Real entitlement state
-/// (RevenueCat) and onboarding-completion persistence choices are refined
-/// in later phases; this only carries what the required screens need to
-/// exist and be reachable now.
+/// Shared app state that is deliberately *not* entitlement state.
+///
+/// Whether the user has paid lives in `PurchaseStore`, backed by RevenueCat,
+/// with a cached last-known value for cold launch. Keeping a second
+/// `isPremium` flag here is how a paying user ends up locked out by a hard
+/// paywall, so this type owns onboarding completion and nothing else.
 @Observable
 final class AppState {
     /// Whether onboarding (through the paywall hand-off) has been completed.
@@ -17,25 +19,5 @@ final class AppState {
 
     init() {
         hasCompletedOnboarding = UserDefaults.standard.bool(forKey: Self.onboardingKey)
-        isPremium = UserDefaults.standard.bool(forKey: Self.premiumKey)
     }
-
-    /// Whether the user has an active subscription.
-    ///
-    /// Phase 5 replaces this with RevenueCat's entitlement state. It is
-    /// persisted rather than defaulted so that the premium screens can be
-    /// exercised end to end now, and so a purchase made in one session is
-    /// still honoured in the next once the real entitlement arrives.
-    var isPremium: Bool {
-        didSet { UserDefaults.standard.set(isPremium, forKey: Self.premiumKey) }
-    }
-
-    private static let premiumKey = "isPremium"
-
-    /// Placeholder entitlement tier for the retention-offer eligibility gate
-    /// (STANDARDS.md §9): the discount must never show to a user already on
-    /// annual. Real state comes from RevenueCat in 05_integrations.md — this
-    /// stub defaults to "not on annual" so the offer flow is exercisable in
-    /// the scaffold.
-    var isOnAnnualPlan = false
 }
