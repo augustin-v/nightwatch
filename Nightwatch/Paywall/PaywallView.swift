@@ -36,6 +36,15 @@ struct PaywallView: View {
             Analytics.paywallViewed(source: source)
             await store.refresh()
             if store.isEntitled { onEntitled() }
+
+            // This screen is the guaranteed gate: it is local, it is
+            // localized in all eight languages, and it renders with no
+            // network. Superwall is then given the chance to present its own
+            // paywall over the top, which is what makes remote experiments
+            // possible without ever risking an unusable app. If the campaign
+            // has nothing to show, or the device is offline, this screen
+            // simply stays.
+            PaywallPresenter.registerOnboardingPlacement { await store.refresh() }
         }
         .sheet(item: $legalDocument) { document in
             NavigationStack {
@@ -43,6 +52,7 @@ struct PaywallView: View {
             }
             .preferredColorScheme(.dark)
         }
+        .onReceive(PaywallPresenter.legalRequests) { legalDocument = $0 }
     }
 
     private var content: some View {
