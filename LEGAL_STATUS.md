@@ -15,18 +15,10 @@ storefronts where GDPR rights language is required. Per STANDARDS.md §6
 (scaffold step) this is an escalation to custom legal drafting, not a
 placeholder-fill.
 
-**Status:** APPROVED, not approved. The document carries its own in-file
-banner (do not remove it) stating it is a prepared draft, not legal advice,
-and not yet approved or published. It is linked from the Settings screen in
-the scaffold so the required-screen structure exists, but per STANDARDS.md
-the app is not submission-ready until this draft is reviewed.
-
-**Blocked on:** Control Room owner request `req_67d52c6ca0` — the owner
-needs to review and approve (or request changes to) this custom draft before
-it is treated as final. Resume by checking
-`python3 control-room/factoryctl.py inbox aurora-forecast` (or the relevant
-app id) for the owner's reply, then removing the draft banner and updating
-this file once approved.
+**Status:** APPROVED by the owner and published at
+https://augustin-v.github.io/nightwatch/privacy/. The bundled document carries
+the same approved policy. No lawyer has reviewed it; the owner accepted that
+explicitly.
 
 ## Terms of use — filled from the shared template
 
@@ -49,11 +41,3 @@ location/GDPR gap that blocks the privacy policy. Filled values:
   tier prices to be stated.
 
 No literal `{{...}}` remains in either document.
-
-
-## Status update 2026-08-09
-
-The owner approved the custom privacy policy (Control Room request
-`req_67d52c6ca0`) and set the support address to augustin.dev@tutamail.com.
-The draft banner has been replaced with an approval note. No lawyer has
-reviewed it; the owner accepted that explicitly.
