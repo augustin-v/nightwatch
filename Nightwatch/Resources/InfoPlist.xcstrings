@@ -1,0 +1,17 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Location usage description shown in the system permission prompt.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nightwatch uses your location on-device to work out sunset, twilight and aurora visibility where you are, and to request a local cloud forecast. Your location is never sent to us."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
