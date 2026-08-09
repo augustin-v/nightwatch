@@ -23,6 +23,116 @@
         }
       }
     },
+    "cancel.detailPlaceholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell us more"
+          }
+        }
+      }
+    },
+    "cancel.detailPrompt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anything else? (optional)"
+          }
+        }
+      }
+    },
+    "cancel.navigationTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage Subscription"
+          }
+        }
+      }
+    },
+    "cancel.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "cancel.reason.didntUseIt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Didn't use it"
+          }
+        }
+      }
+    },
+    "cancel.reason.foundBetterApp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found a better app"
+          }
+        }
+      }
+    },
+    "cancel.reason.other": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something else"
+          }
+        }
+      }
+    },
+    "cancel.reason.technicalIssues": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Technical issues"
+          }
+        }
+      }
+    },
+    "cancel.reason.tooExpensive": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too expensive"
+          }
+        }
+      }
+    },
+    "cancel.reasonPrompt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before you go, what went wrong?"
+          }
+        }
+      }
+    },
     "common.off": {
       "extractionState": "manual",
       "localizations": {
@@ -452,6 +562,17 @@
         }
       }
     },
+    "paywall.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start watching"
+          }
+        }
+      }
+    },
     "paywall.headline": {
       "extractionState": "manual",
       "localizations": {
@@ -459,6 +580,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stop guessing. Start seeing."
+          }
+        }
+      }
+    },
+    "paywall.restorePurchases": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchases"
           }
         }
       }
@@ -496,6 +628,39 @@
         }
       }
     },
+    "retention.accept": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep my alerts"
+          }
+        }
+      }
+    },
+    "retention.decline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No thanks, continue to cancel"
+          }
+        }
+      }
+    },
+    "retention.ineligibleTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're already on our best plan"
+          }
+        }
+      }
+    },
     "retention.offer.description": {
       "extractionState": "manual",
       "localizations": {
@@ -518,6 +683,28 @@
         }
       }
     },
+    "settings.contactSupport": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact Support"
+          }
+        }
+      }
+    },
+    "settings.manageSubscription": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage Subscription"
+          }
+        }
+      }
+    },
     "settings.privacyPolicy.title": {
       "extractionState": "manual",
       "localizations": {
@@ -529,6 +716,17 @@
         }
       }
     },
+    "settings.restorePurchases": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchases"
+          }
+        }
+      }
+    },
     "settings.terms.title": {
       "extractionState": "manual",
       "localizations": {
@@ -536,6 +734,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Terms of Use"
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         }
       }
@@ -558,6 +767,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tonight"
+          }
+        }
+      }
+    },
+    "tonight.attribution": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aurora data from NOAA SWPC. Weather data from MET Norway, CC BY 4.0."
           }
         }
       }
@@ -646,6 +866,50 @@
           "stringUnit": {
             "state": "translated",
             "value": "Best window: %@–%@"
+          }
+        }
+      }
+    },
+    "tonight.empty.needsLocation.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on location in Settings, or add a place you watch from."
+          }
+        }
+      }
+    },
+    "tonight.empty.needsLocation.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We don't know which sky to watch"
+          }
+        }
+      }
+    },
+    "tonight.empty.unavailable.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We couldn't reach the space weather and cloud forecasts. Pull down to try again."
+          }
+        }
+      }
+    },
+    "tonight.empty.unavailable.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No forecast yet"
           }
         }
       }
@@ -749,6 +1013,39 @@
         }
       }
     },
+    "tonight.freshness.fresh": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updated %@"
+          }
+        }
+      }
+    },
+    "tonight.freshness.stale": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last updated %@"
+          }
+        }
+      }
+    },
+    "tonight.freshness.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No forecast data yet"
+          }
+        }
+      }
+    },
     "tonight.hourlyStrip.accessibilityValue": {
       "extractionState": "manual",
       "localizations": {
@@ -822,6 +1119,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nothing is holding tonight back."
+          }
+        }
+      }
+    },
+    "tonight.loading": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reading the sky…"
           }
         }
       }

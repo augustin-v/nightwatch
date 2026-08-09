@@ -47,11 +47,19 @@ struct FactorBreakdown: View {
                (reading.cloudFraction / 100).formatted(.percent.precision(.fractionLength(0))))
     }
 
+    /// Sun altitude carries an explicit sign. Without it "Sun 36°" and
+    /// "Sun -14°" look like the same kind of number, when one means broad
+    /// daylight and the other means astronomical twilight.
     private var darknessReading: String {
-        String(format: String(localized: "tonight.reading.darkness"),
-               Measurement(value: reading.solarAltitude, unit: UnitAngle.degrees)
-                   .formatted(.measurement(width: .narrow, usage: .asProvided,
-                                           numberFormatStyle: .number.precision(.fractionLength(0)))))
+        let degrees = Measurement(value: reading.solarAltitude, unit: UnitAngle.degrees)
+            .formatted(.measurement(
+                width: .narrow,
+                usage: .asProvided,
+                numberFormatStyle: .number
+                    .precision(.fractionLength(0))
+                    .sign(strategy: .always(includingZero: false))
+            ))
+        return String(format: String(localized: "tonight.reading.darkness"), degrees)
     }
 
     private var moonReading: String {

@@ -54,6 +54,6 @@ public extension NightForecastReport {
             )
         }
         let verdict = VisibilityEngine.nightVerdict(hours: hours, observerLatitude: latitude, observerLongitude: longitude)
-        return NightForecastReport(nightOf: nightOf, verdict: verdict, activityFreshness: .fresh(asOf: Date()), cloudFreshness: .fresh(asOf: Date()))
+        return NightForecastReport(nightOf: nightOf, verdict: verdict, readings: hours, activityFreshness: .fresh(asOf: Date()), cloudFreshness: .fresh(asOf: Date()))
     }
 }

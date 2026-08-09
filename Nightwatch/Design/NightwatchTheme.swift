@@ -77,6 +77,11 @@ enum Nightwatch {
             warning: Color(red: 0.780, green: 0.176, blue: 0.145)
         )
 
+        /// Matches `AccentColor` in the asset catalog. Dark enough that the
+        /// white button labels FactoryKit renders clear WCAG AA, and calm
+        /// enough to look at outdoors at 2am.
+        static let ctaGreen = Color(red: 0.055, green: 0.478, blue: 0.373)
+
         static func forMode(_ mode: Mode) -> Palette {
             switch mode {
             case .night: return .night

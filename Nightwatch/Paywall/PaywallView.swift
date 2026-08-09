@@ -30,6 +30,10 @@ struct PaywallView: View {
                 title: String(localized: "paywall.weekly.title"),
                 priceLabel: String(localized: "paywall.weekly.priceLabel")
             ),
+            shellCopy: PaywallShellCopy(
+                continueButton: String(localized: "paywall.continue"),
+                restorePurchases: String(localized: "paywall.restorePurchases")
+            ),
             onContinue: { _ in
                 // Phase 5 wires the real purchase call (Superwall/RevenueCat).
                 onContinue()

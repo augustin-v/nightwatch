@@ -39,7 +39,7 @@ public actor MetNorwayCloudClient {
 
     public init(
         httpClient: HTTPClient = URLSessionHTTPClient(),
-        userAgent: String = "Nightwatch/1.0 (iOS aurora-forecast app; contact via App Store listing)",
+        userAgent: String = "Nightwatch/1.0 (iOS aurora forecast app; augustin.dev@tutamail.com)",
         cacheDirectory: URL? = nil
     ) {
         self.httpClient = httpClient

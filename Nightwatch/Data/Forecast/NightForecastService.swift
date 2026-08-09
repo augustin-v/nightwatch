@@ -193,6 +193,7 @@ public actor NightForecastService: NightForecastProviding {
         let report = NightForecastReport(
             nightOf: nightNoon,
             verdict: verdict,
+            readings: hours,
             activityFreshness: .combined(gridFreshness, kpFreshness),
             cloudFreshness: cloudFreshness
         )

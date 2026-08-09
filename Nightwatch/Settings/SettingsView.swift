@@ -22,6 +22,10 @@ struct SettingsView: View {
                 guard let url = URL(string: "mailto:augustin.dev@tutamail.com") else { return }
                 UIApplication.shared.open(url)
             },
+            restorePurchasesTitle: String(localized: "settings.restorePurchases"),
+            manageSubscriptionTitle: String(localized: "settings.manageSubscription"),
+            contactSupportTitle: String(localized: "settings.contactSupport"),
+            navigationTitle: String(localized: "settings.title"),
             privacyPolicyTitle: String(localized: "settings.privacyPolicy.title"),
             privacyPolicyMarkdown: LegalDocuments.privacyPolicyMarkdown,
             termsTitle: String(localized: "settings.terms.title"),

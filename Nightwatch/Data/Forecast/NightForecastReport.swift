@@ -10,14 +10,25 @@ public struct NightForecastReport: Sendable, Equatable {
     /// "the next 3 nights" are anchored).
     public let nightOf: Date
     public let verdict: NightVerdict
+    /// The physical inputs the verdict was scored from, kept alongside it so
+    /// the UI can show real readings (Kp, cloud cover, sun altitude, moon
+    /// illumination) rather than the engine's internal sub-scores.
+    public let readings: [HourlyVisibilityInput]
     /// Freshness of the OVATION nowcast + Kp forecast inputs, combined.
     public let activityFreshness: DataFreshness
     /// Freshness of the MET Norway cloud forecast input.
     public let cloudFreshness: DataFreshness
 
-    public init(nightOf: Date, verdict: NightVerdict, activityFreshness: DataFreshness, cloudFreshness: DataFreshness) {
+    public init(
+        nightOf: Date,
+        verdict: NightVerdict,
+        readings: [HourlyVisibilityInput] = [],
+        activityFreshness: DataFreshness,
+        cloudFreshness: DataFreshness
+    ) {
         self.nightOf = nightOf
         self.verdict = verdict
+        self.readings = readings
         self.activityFreshness = activityFreshness
         self.cloudFreshness = cloudFreshness
     }
@@ -139,8 +150,16 @@ struct NightForecastReportDTO: Codable, Sendable {
         return NightForecastReport(
             nightOf: nightOf,
             verdict: verdict,
+            readings: hourlyInputs.map { $0.input },
             activityFreshness: activityFreshness.freshness,
             cloudFreshness: cloudFreshness.freshness
         )
+    }
+}
+
+public extension NightForecastReport {
+    /// The reading for a given scored hour, matched by timestamp.
+    func reading(at date: Date) -> HourlyVisibilityInput? {
+        readings.first { $0.date == date }
     }
 }

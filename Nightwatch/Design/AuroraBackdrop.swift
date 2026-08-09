@@ -106,7 +106,9 @@ struct NightSurface<Content: View>: View {
             content
         }
         .nightwatchTheme(.night)
-        .tint(palette.ramp[3])
+        // Same deep teal as the AccentColor asset FactoryKit's buttons use.
+        // Two different greens on one screen reads as an accident.
+        .tint(Nightwatch.Palette.ctaGreen)
         .preferredColorScheme(.dark)
     }
 }
