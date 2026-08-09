@@ -1,17 +1,59 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "NSLocationWhenInUseUsageDescription" : {
-      "comment" : "Location usage description shown in the system permission prompt.",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nightwatch uses your location on-device to work out sunset, twilight and aurora visibility where you are, and to request a local cloud forecast. Your location is never sent to us."
+  "sourceLanguage": "en",
+  "strings": {
+    "NSLocationWhenInUseUsageDescription": {
+      "comment": "Location usage description shown in the system permission prompt.",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch uses your location on-device to work out sunset, twilight and aurora visibility where you are, and to request a local cloud forecast. Your location is never sent to us."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch bruker posisjonen din på enheten til å beregne solnedgang, skumring og nordlyssikt der du er, og for å hente et lokalt skyvarsel. Posisjonen din blir aldri sendt til oss."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch använder din plats på enheten för att beräkna solnedgång, skymning och norrskenssikt där du är, och för att hämta en lokal molnprognos. Din plats skickas aldrig till oss."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch käyttää sijaintiasi laitteella laskeakseen auringonlaskun, hämärän ja revontulten näkyvyyden juuri sinun sijainnissasi sekä hakeakseen paikallisen pilviennusteen. Sijaintiasi ei koskaan lähetetä meille."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch bruger din placering på enheden til at beregne solnedgang, tusmørke og nordlyssynlighed der, hvor du er, og til at hente en lokal skyudsigt. Din placering sendes aldrig til os."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch verwendet deinen Standort auf dem Gerät, um Sonnenuntergang, Dämmerung und die Polarlichtsichtbarkeit an deinem Standort zu berechnen und eine lokale Wolkenvorhersage abzurufen. Dein Standort wird niemals an uns gesendet."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch gebruikt je locatie op het toestel om zonsondergang, schemering en de zichtbaarheid van het noorderlicht bij jou te berekenen en om een lokale bewolkingsvoorspelling op te vragen. Je locatie wordt nooit naar ons verzonden."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch utilise votre position sur l'appareil pour déterminer le coucher du soleil, le crépuscule et la visibilité de l'aurore boréale là où vous êtes, ainsi que pour demander des prévisions de nuages locales. Votre position ne nous est jamais envoyée."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

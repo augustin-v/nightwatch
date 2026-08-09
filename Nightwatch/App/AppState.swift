@@ -17,7 +17,20 @@ final class AppState {
 
     init() {
         hasCompletedOnboarding = UserDefaults.standard.bool(forKey: Self.onboardingKey)
+        isPremium = UserDefaults.standard.bool(forKey: Self.premiumKey)
     }
+
+    /// Whether the user has an active subscription.
+    ///
+    /// Phase 5 replaces this with RevenueCat's entitlement state. It is
+    /// persisted rather than defaulted so that the premium screens can be
+    /// exercised end to end now, and so a purchase made in one session is
+    /// still honoured in the next once the real entitlement arrives.
+    var isPremium: Bool {
+        didSet { UserDefaults.standard.set(isPremium, forKey: Self.premiumKey) }
+    }
+
+    private static let premiumKey = "isPremium"
 
     /// Placeholder entitlement tier for the retention-offer eligibility gate
     /// (STANDARDS.md §9): the discount must never show to a user already on

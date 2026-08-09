@@ -51,17 +51,24 @@ targets:
         CFBundleDisplayName: Aurora Forecast - Nightwatch
         CFBundleDevelopmentRegion: en
         CFBundleIconName: AppIcon
-        # Launch locale for en; Phase 3c adds nb, sv, fi, da, de-DE, nl-NL, fr
-        # per the candidate spec's launch-locale list. Keep in sync with
-        # CFBundleLocalizations here and the .xcstrings catalogs.
+        # Launch locales per the candidate spec. Keep in sync with the
+        # .xcstrings catalogs; a locale listed here with no catalog entries
+        # silently ships English, which is worse than not listing it.
         CFBundleLocalizations:
           - en
+          - nb
+          - sv
+          - fi
+          - da
+          - de-DE
+          - nl-NL
+          - fr
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         ITSAppUsesNonExemptEncryption: false
         # Localized via InfoPlist.xcstrings (String Catalog for Info.plist
-        # keys) — the value here is the base-locale string that Xcode
+        # keys). The value here is the base-locale string that Xcode
         # resolves against that catalog at build time.
         NSLocationWhenInUseUsageDescription: "Nightwatch uses your location on-device to work out sunset, twilight and aurora visibility where you are, and to request a local cloud forecast. Your location is never sent to us."
         # Alert refresh (Phase 3b wires the actual BGTaskScheduler logic per

@@ -1,4 +1,4 @@
-# Privacy Policy — Aurora Forecast - Nightwatch
+# Privacy Policy: Aurora Forecast - Nightwatch
 
 > **Approved by the app owner on 2026-08-09.** The factory's shared privacy
 > template explicitly refuses to cover apps that use location data or that
@@ -18,7 +18,7 @@ your device, and what your rights are.
 
 The App has no accounts and no server of ours. Your location is used on your
 device to work out what the sky will do above you. To fetch a cloud forecast we
-send an **approximate** coordinate — rounded to roughly 10 km — to a public
+send an **approximate** coordinate (rounded to roughly 10 km) to a public
 weather service. We never receive a history of where you have been, and we
 never sell anything about you.
 
@@ -32,7 +32,7 @@ never sell anything about you.
   degree (about 10 km), and only that rounded coordinate is sent. You can use
   the App without granting location permission by entering places manually.
 - **Places you save.** Stored on your device. Not transmitted to us.
-- **Analytics.** We use PostHog to understand how the App is used — screens
+- **Analytics.** We use PostHog to understand how the App is used: screens
   viewed, features used, onboarding completion. This is tied to an anonymous
   installation identifier, not your name or email. Analytics events do **not**
   include your coordinates or your saved places.
@@ -59,12 +59,12 @@ provided by NOAA SWPC, a US government public service.
 
 ## Third-party services
 
-- **PostHog** (analytics) — https://posthog.com/privacy
-- **RevenueCat** (subscriptions) — https://www.revenuecat.com/privacy
-- **Superwall** (paywalls) — https://superwall.com/privacy
-- **MET Norway** (weather) — https://www.met.no/en/About-us/privacy
-- **NOAA SWPC** (space weather) — https://www.weather.gov/privacy
-- **Apple App Store** — Apple's privacy policy governs payment processing.
+- **PostHog** (analytics): https://posthog.com/privacy
+- **RevenueCat** (subscriptions): https://www.revenuecat.com/privacy
+- **Superwall** (paywalls): https://superwall.com/privacy
+- **MET Norway** (weather): https://www.met.no/en/About-us/privacy
+- **NOAA SWPC** (space weather): https://www.weather.gov/privacy
+- **Apple App Store**: Apple's privacy policy governs payment processing.
 
 ## Data retention
 
@@ -84,8 +84,8 @@ augustin.dev@tutamail.com and we will respond within 30 days.
 
 You can also:
 
-- revoke location permission at any time in iOS Settings — the App keeps
-  working with manually entered places;
+- revoke location permission at any time in iOS Settings (the App keeps
+  working with manually entered places);
 - disable analytics from within the App's own Settings screen;
 - cancel your subscription in your Apple ID settings.
 

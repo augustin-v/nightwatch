@@ -122,10 +122,16 @@ struct VerdictHero: View {
     }
 }
 
-/// A single arc showing the night's peak score. No numbers competing with the
-/// band word — the figure inside is small and secondary on purpose.
-private struct ScoreArc: View {
+/// A single arc showing a night's peak score. No numbers competing with the
+/// band word: the figure inside is small and secondary on purpose.
+///
+/// Shared with the Nights-ahead cards, which draw it smaller. The line width
+/// scales with the frame rather than being fixed, because a 10pt stroke on a
+/// 56pt dial reads as a doughnut instead of an arc.
+struct ScoreArc: View {
     let score: Double
+    var lineWidth: CGFloat = 10
+    var showsLabel = true
 
     @Environment(\.palette) private var palette
 
@@ -133,7 +139,7 @@ private struct ScoreArc: View {
         let fraction = min(max(score, 0), 100) / 100
         ZStack {
             Circle()
-                .stroke(palette.hairline, lineWidth: 10)
+                .stroke(palette.hairline, lineWidth: lineWidth)
 
             Circle()
                 .trim(from: 0, to: fraction)
@@ -147,14 +153,16 @@ private struct ScoreArc: View {
                         startAngle: .degrees(-90),
                         endAngle: .degrees(-90 + 360 * fraction)
                     ),
-                    style: StrokeStyle(lineWidth: 10, lineCap: .round)
+                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
 
-            Text(fraction, format: .percent.precision(.fractionLength(0)))
-                .font(Nightwatch.TypeScale.title)
-                .foregroundStyle(palette.textPrimary)
-                .minimumScaleFactor(0.5)
+            if showsLabel {
+                Text(fraction, format: .percent.precision(.fractionLength(0)))
+                    .font(Nightwatch.TypeScale.title)
+                    .foregroundStyle(palette.textPrimary)
+                    .minimumScaleFactor(0.5)
+            }
         }
     }
 }

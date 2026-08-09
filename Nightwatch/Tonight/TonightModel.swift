@@ -22,6 +22,10 @@ final class TonightModel {
 
     private let services: AppServices
     private var hasStarted = false
+    /// What the current `state` was actually computed for, so switching saved
+    /// places re-forecasts instead of leaving the previous place's verdict on
+    /// screen under a new name.
+    private var loadedCoordinate: GeoCoordinate?
 
     init(services: AppServices = .shared) {
         self.services = services
@@ -34,6 +38,16 @@ final class TonightModel {
     }
 
     func refresh() async {
+        await load(force: true)
+    }
+
+    /// Called when the selected place changes. Only re-forecasts when the
+    /// coordinate genuinely moved, so returning to the tab does not fire a
+    /// network round trip for nothing.
+    func syncToActiveLocation() async {
+        guard hasStarted else { return await start() }
+        guard services.activeCoordinate != loadedCoordinate else { return }
+        state = .loading
         await load(force: true)
     }
 
@@ -70,6 +84,7 @@ final class TonightModel {
             return
         }
 
+        loadedCoordinate = coordinate
         services.rememberCoordinateForBackgroundRefresh(coordinate)
 
         if !force, case .loading = state,

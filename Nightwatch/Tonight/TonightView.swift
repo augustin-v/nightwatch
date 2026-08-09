@@ -7,8 +7,12 @@ import AuroraCore
 /// it?", then "why not / why yes?", then "when exactly?". Anything that does
 /// not answer one of those three is not on this screen.
 struct TonightView: View {
+    let appState: AppState
+
     @AppStorage("nightVisionEnabled") private var nightVisionEnabled = false
     @State private var model = TonightModel()
+    @State private var services = AppServices.shared
+    @State private var showingAlerts = false
 
     private var mode: Nightwatch.Mode { nightVisionEnabled ? .nightVision : .night }
     private var palette: Nightwatch.Palette { .forMode(mode) }
@@ -17,14 +21,18 @@ struct TonightView: View {
         NavigationStack {
             content
                 .background(background.ignoresSafeArea())
-                .toolbar { nightVisionToggle }
+                .toolbar {
+                    alertsButton
+                    nightVisionToggle
+                }
                 .toolbarBackground(palette.background, for: .navigationBar)
                 .navigationBarTitleDisplayMode(.inline)
         }
         .nightwatchTheme(mode)
         .tint(palette.rampColor(for: currentPeakScore))
         .preferredColorScheme(.dark)
-        .task { await model.start() }
+        .sheet(isPresented: $showingAlerts) { AlertsView(appState: appState) }
+        .task(id: services.selectedPlaceID) { await model.syncToActiveLocation() }
     }
 
     @ViewBuilder
@@ -89,6 +97,14 @@ struct TonightView: View {
     /// data is worse than an honest one.
     private func header(for report: NightForecastReport) -> some View {
         VStack(alignment: .leading, spacing: Nightwatch.Space.xs) {
+            // Which place this verdict is for. Once places exist, a forecast
+            // with no location on it is ambiguous by construction.
+            Text(verbatim: activePlaceName)
+                .font(Nightwatch.TypeScale.caption)
+                .textCase(.uppercase)
+                .kerning(1.1)
+                .foregroundStyle(palette.textTertiary)
+
             Text(report.nightOf, format: .dateTime.weekday(.wide).day().month(.wide))
                 .font(Nightwatch.TypeScale.title)
                 .foregroundStyle(palette.textPrimary)
@@ -114,6 +130,29 @@ struct TonightView: View {
             .font(Nightwatch.TypeScale.caption)
             .foregroundStyle(palette.textTertiary)
             .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var activePlaceName: String {
+        if let id = services.selectedPlaceID,
+           let place = services.places.places.first(where: { $0.id == id }) {
+            return place.name
+        }
+        return String(localized: "tonight.location.currentLocation")
+    }
+
+    /// Alerts live behind the bell rather than in Settings: the moment someone
+    /// wants to be told about a night like this one is the moment they are
+    /// looking at a night like this one.
+    private var alertsButton: some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Button {
+                showingAlerts = true
+            } label: {
+                Image(systemName: "bell")
+                    .foregroundStyle(palette.textSecondary)
+            }
+            .accessibilityLabel(Text("alerts.title"))
+        }
     }
 
     private var currentPeakScore: Double {
