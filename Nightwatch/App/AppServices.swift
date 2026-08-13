@@ -1,12 +1,22 @@
 import Foundation
 import Observation
 
+/// Authoritative deterministic states available to Factory screenshot capture.
+/// The raw values are the stable semantic IDs used for capture filenames.
+enum FactoryScreenshotScenario: String, CaseIterable {
+    case tonight
+    case nights
+    case ovalMap = "oval-map"
+    case places
+    case alerts
+}
 
 /// Deterministic launch configuration used only by App Store screenshot
 /// capture. Release builds can never activate it, even if launch arguments
 /// are supplied.
 struct ScreenshotConfiguration {
     let isEnabled: Bool
+    let scenario: FactoryScreenshotScenario?
     let selectedTab: String
     let showsAlerts: Bool
     let showsPaywall: Bool
@@ -14,9 +24,39 @@ struct ScreenshotConfiguration {
     static var current: ScreenshotConfiguration {
 #if DEBUG
         let arguments = ProcessInfo.processInfo.arguments
-        guard arguments.contains("-screenshotMode") else {
-            return ScreenshotConfiguration(isEnabled: false, selectedTab: "tonight", showsAlerts: false, showsPaywall: false)
+        let factoryMode = arguments.contains("-factoryScreenshot")
+        let legacyMode = arguments.contains("-screenshotMode")
+        guard factoryMode || legacyMode else {
+            return ScreenshotConfiguration(isEnabled: false, scenario: nil, selectedTab: "tonight", showsAlerts: false, showsPaywall: false)
         }
+
+        if factoryMode {
+            let scenario: FactoryScreenshotScenario?
+            if let index = arguments.firstIndex(of: "-factoryScreenshotState"), arguments.indices.contains(index + 1) {
+                scenario = FactoryScreenshotScenario(rawValue: arguments[index + 1])
+            } else {
+                // No state is the discovery launch. The app still comes up in a
+                // harmless deterministic default while emitting the manifest.
+                scenario = nil
+            }
+            let selectedTab: String
+            switch scenario {
+            case .nights: selectedTab = "nights"
+            case .ovalMap: selectedTab = "map"
+            case .places: selectedTab = "places"
+            default: selectedTab = "tonight"
+            }
+            return ScreenshotConfiguration(
+                isEnabled: true,
+                scenario: scenario,
+                selectedTab: selectedTab,
+                showsAlerts: scenario == .alerts,
+                showsPaywall: false
+            )
+        }
+
+        // Legacy/manual screenshot flags remain available for local debugging,
+        // but Factory Phase 6 uses only the semantic contract above.
         let selectedTab: String
         if let index = arguments.firstIndex(of: "-startTab"), arguments.indices.contains(index + 1) {
             selectedTab = arguments[index + 1]
@@ -25,24 +65,50 @@ struct ScreenshotConfiguration {
         }
         return ScreenshotConfiguration(
             isEnabled: true,
+            scenario: nil,
             selectedTab: selectedTab,
             showsAlerts: arguments.contains("-showAlerts"),
             showsPaywall: arguments.contains("-showPaywall")
         )
 #else
-        return ScreenshotConfiguration(isEnabled: false, selectedTab: "tonight", showsAlerts: false, showsPaywall: false)
+        return ScreenshotConfiguration(isEnabled: false, scenario: nil, selectedTab: "tonight", showsAlerts: false, showsPaywall: false)
 #endif
     }
 
     func prepareLaunch() {
         guard isEnabled else { return }
+        emitScenarioManifestIfNeeded()
         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
         UserDefaults.standard.set(!showsPaywall, forKey: "isPremium")
         UserDefaults.standard.set(false, forKey: "nightVisionEnabled")
         UserDefaults.standard.set(true, forKey: AlertSettings.enabledKey)
         UserDefaults.standard.set(AlertSettings.defaultThreshold, forKey: AlertSettings.thresholdKey)
     }
+
+    /// Factory discovers this generated file from the simulator data container.
+    /// It is derived from `CaseIterable`; no second scenario registry exists.
+    private func emitScenarioManifestIfNeeded() {
+#if DEBUG
+        guard ProcessInfo.processInfo.arguments.contains("-factoryScreenshot") else { return }
+
+        struct Manifest: Encodable {
+            let schemaVersion = 1
+            let scenarios: [String]
+        }
+
+        let manifest = Manifest(scenarios: FactoryScreenshotScenario.allCases.map(\.rawValue))
+        guard let data = try? JSONEncoder().encode(manifest),
+              let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+        else { return }
+        try? FileManager.default.createDirectory(at: caches, withIntermediateDirectories: true)
+        try? data.write(
+            to: caches.appendingPathComponent("factory-screenshot-scenarios.json"),
+            options: .atomic
+        )
+#endif
+    }
 }
+
 /// Composition root. One place that knows how the app's pieces are wired
 /// together, so views take protocols and the background task and the UI end
 /// up sharing the same configuration instead of quietly diverging.
