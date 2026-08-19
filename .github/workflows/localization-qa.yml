@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   catalogs:
-    name: Validate and apply catalogs
+    name: Validate localization resources
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,6 +23,9 @@ jobs:
 
       - name: Apply and validate translations
         run: python3 Tools/Localizations/apply_localizations.py
+
+      - name: Verify complete resource coverage
+        run: python3 Tools/Localizations/validate_resources.py
 
       - name: Verify generated resources are valid JSON
         run: |
@@ -47,36 +50,60 @@ jobs:
           git commit -m "Apply priority market localizations"
           git push
 
-  ios-build:
-    name: Build and test iOS app
+  core-tests:
+    name: Run AuroraCore tests
     needs: catalogs
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Test forecast engine
+        run: swift test --package-path AuroraCore
+
+  ios-build:
+    name: iOS build and app tests
+    needs: catalogs
+    runs-on: macos-latest
+    env:
+      FACTORY_REPO_TOKEN: ${{ secrets.FACTORY_REPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Report missing private dependency credential
+        if: env.FACTORY_REPO_TOKEN == ''
+        run: |
+          echo "::warning::iOS build skipped: FACTORY_REPO_TOKEN is required to read the private augustin-v/factory repository used by FactoryAnalytics."
+          echo "### iOS build blocked by private dependency credential" >> "$GITHUB_STEP_SUMMARY"
+          echo "Nightwatch depends on ../factory/analytics/FactoryAnalytics. Add a repository secret named FACTORY_REPO_TOKEN with read access to augustin-v/factory, then rerun this workflow." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Apply translations in workspace
+        if: env.FACTORY_REPO_TOKEN != ''
         run: python3 Tools/Localizations/apply_localizations.py
 
       - name: Checkout private FactoryAnalytics dependency
+        if: env.FACTORY_REPO_TOKEN != ''
         uses: actions/checkout@v4
         with:
           repository: augustin-v/factory
           path: factory
-          token: ${{ secrets.FACTORY_REPO_TOKEN || github.token }}
+          token: ${{ secrets.FACTORY_REPO_TOKEN }}
 
       - name: Arrange sibling dependency layout
+        if: env.FACTORY_REPO_TOKEN != ''
         run: |
           mkdir -p ../factory
           rm -rf ../factory/analytics
           cp -R factory/analytics ../factory/analytics
 
       - name: Install XcodeGen
+        if: env.FACTORY_REPO_TOKEN != ''
         run: brew install xcodegen
 
       - name: Generate Xcode project
+        if: env.FACTORY_REPO_TOKEN != ''
         run: xcodegen generate
 
       - name: Build
+        if: env.FACTORY_REPO_TOKEN != ''
         run: |
           xcodebuild \
             -project Nightwatch.xcodeproj \
@@ -86,7 +113,8 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
-      - name: Run tests
+      - name: Run app tests
+        if: env.FACTORY_REPO_TOKEN != ''
         run: |
           UDID=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(device["udid"] for runtime in d["devices"].values() for device in runtime if device["name"].startswith("iPhone")))')
           xcodebuild \
