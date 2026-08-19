@@ -40,7 +40,12 @@ def require_catalog_coverage() -> int:
             raise ValueError(f"{key}: missing catalog locales {sorted(missing)}")
         for locale in APP_LOCALES:
             unit = item["localizations"][locale].get("stringUnit", {})
-            if unit.get("state") != "translated" or not unit.get("value"):
+            if not unit.get("value"):
+                raise ValueError(f"{key}: empty {locale} value")
+            # Apple may keep manually-authored development-language entries in
+            # the `new` state. Shipping translations must be explicitly marked
+            # translated; the English source only needs to be present.
+            if locale != "en" and unit.get("state") != "translated":
                 raise ValueError(f"{key}: incomplete {locale} translation")
     return len(strings)
 
@@ -53,6 +58,12 @@ def require_info_plist_coverage() -> int:
         missing = expected - actual
         if missing:
             raise ValueError(f"{key}: missing InfoPlist locales {sorted(missing)}")
+        for locale in APP_LOCALES:
+            unit = item["localizations"][locale].get("stringUnit", {})
+            if not unit.get("value"):
+                raise ValueError(f"{key}: empty InfoPlist value for {locale}")
+            if locale != "en" and unit.get("state") != "translated":
+                raise ValueError(f"{key}: incomplete InfoPlist translation for {locale}")
     return len(info["strings"])
 
 
