@@ -1,0 +1,94 @@
+name: Localization QA
+
+on:
+  push:
+    branches:
+      - localization/priority-markets
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  catalogs:
+    name: Validate and apply catalogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply and validate translations
+        run: python3 Tools/Localizations/apply_localizations.py
+
+      - name: Verify generated resources are valid JSON
+        run: |
+          python3 -m json.tool Nightwatch/Resources/Localizable.xcstrings >/dev/null
+          python3 -m json.tool Nightwatch/Resources/InfoPlist.xcstrings >/dev/null
+          python3 -m json.tool Nightwatch.storekit >/dev/null
+
+      - name: Commit generated localization resources
+        run: |
+          if git diff --quiet -- Nightwatch/Resources/Localizable.xcstrings Nightwatch/Resources/InfoPlist.xcstrings Nightwatch.storekit; then
+            echo "Localization resources are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Nightwatch/Resources/Localizable.xcstrings Nightwatch/Resources/InfoPlist.xcstrings Nightwatch.storekit
+          git commit -m "Apply priority market localizations"
+          git push
+
+  ios-build:
+    name: Build and test iOS app
+    needs: catalogs
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply translations in workspace
+        run: python3 Tools/Localizations/apply_localizations.py
+
+      - name: Checkout private FactoryAnalytics dependency
+        uses: actions/checkout@v4
+        with:
+          repository: augustin-v/factory
+          path: factory
+          token: ${{ secrets.FACTORY_REPO_TOKEN || github.token }}
+
+      - name: Arrange sibling dependency layout
+        run: |
+          mkdir -p ../factory
+          rm -rf ../factory/analytics
+          cp -R factory/analytics ../factory/analytics
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build
+        run: |
+          xcodebuild \
+            -project Nightwatch.xcodeproj \
+            -scheme Nightwatch \
+            -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Run tests
+        run: |
+          DEVICE=$(xcrun simctl list devices available | sed -n 's/^[[:space:]]*\(iPhone[^()]*(.*)\) (.*$/\1/p' | head -1 | sed 's/ (.*$//')
+          if [ -z "$DEVICE" ]; then
+            echo "No available iPhone simulator found" >&2
+            exit 1
+          fi
+          xcodebuild \
+            -project Nightwatch.xcodeproj \
+            -scheme Nightwatch \
+            -configuration Debug \
+            -destination "platform=iOS Simulator,name=$DEVICE" \
+            CODE_SIGNING_ALLOWED=NO \
+            test
