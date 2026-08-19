@@ -28,6 +28,79 @@ TARGETS = {
     "zh-Hant": "zh_TW",
 }
 
+EXISTING_STOREKIT = {
+    "nb_NO": {
+        "annual": {
+            "displayName": "Nightwatch Årlig",
+            "description": "Nordlysprognoser, varsler og kart over nordlysovalen.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Ukentlig",
+            "description": "Nordlysprognoser, varsler og kart over nordlysovalen.",
+        },
+    },
+    "sv_SE": {
+        "annual": {
+            "displayName": "Nightwatch Årsvis",
+            "description": "Norrskensprognoser, aviseringar och karta över norrskensovalen.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Veckovis",
+            "description": "Norrskensprognoser, aviseringar och karta över norrskensovalen.",
+        },
+    },
+    "fi_FI": {
+        "annual": {
+            "displayName": "Nightwatch Vuosittainen",
+            "description": "Revontuliennusteet, ilmoitukset ja revontuliovaalin kartta.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Viikoittainen",
+            "description": "Revontuliennusteet, ilmoitukset ja revontuliovaalin kartta.",
+        },
+    },
+    "da_DK": {
+        "annual": {
+            "displayName": "Nightwatch Årlig",
+            "description": "Nordlysprognoser, alarmer og kort over nordlysovalen.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Ugentlig",
+            "description": "Nordlysprognoser, alarmer og kort over nordlysovalen.",
+        },
+    },
+    "de_DE": {
+        "annual": {
+            "displayName": "Nightwatch Jährlich",
+            "description": "Polarlichtvorhersagen, Benachrichtigungen und Karte des Polarlichtovals.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Wöchentlich",
+            "description": "Polarlichtvorhersagen, Benachrichtigungen und Karte des Polarlichtovals.",
+        },
+    },
+    "nl_NL": {
+        "annual": {
+            "displayName": "Nightwatch Jaarlijks",
+            "description": "Noorderlichtvoorspellingen, meldingen en kaart van het noorderlichtovaal.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Wekelijks",
+            "description": "Noorderlichtvoorspellingen, meldingen en kaart van het noorderlichtovaal.",
+        },
+    },
+    "fr_FR": {
+        "annual": {
+            "displayName": "Nightwatch Annuel",
+            "description": "Prévisions d’aurores boréales, alertes et carte de l’ovale auroral.",
+        },
+        "weekly": {
+            "displayName": "Nightwatch Hebdomadaire",
+            "description": "Prévisions d’aurores boréales, alertes et carte de l’ovale auroral.",
+        },
+    },
+}
+
 # Small quality corrections found while auditing already-supported locales.
 EXISTING_OVERRIDES: dict[str, dict[str, str]] = {
     "de-DE": {
@@ -120,6 +193,21 @@ def apply_string_catalogs() -> dict[str, dict]:
     return loaded
 
 
+def set_storekit_localization(product: dict, locale: str, localized: dict) -> None:
+    replacement = {
+        "description": localized["description"],
+        "displayName": localized["displayName"],
+        "locale": locale,
+    }
+    product["localizations"] = [
+        entry
+        for entry in product.get("localizations", [])
+        if entry.get("locale") != locale
+    ]
+    product["localizations"].append(replacement)
+    product["localizations"].sort(key=lambda entry: entry["locale"])
+
+
 def apply_storekit(loaded: dict[str, dict]) -> None:
     storekit = load_json(STOREKIT)
     products = {
@@ -136,20 +224,19 @@ def apply_storekit(loaded: dict[str, dict]) -> None:
     for app_locale, translation in loaded.items():
         storekit_locale = TARGETS[app_locale]
         for period, product_id in product_ids.items():
-            product = products[product_id]
-            localized = translation["storeKit"][period]
-            replacement = {
-                "description": localized["description"],
-                "displayName": localized["displayName"],
-                "locale": storekit_locale,
-            }
-            product["localizations"] = [
-                entry
-                for entry in product.get("localizations", [])
-                if entry.get("locale") != storekit_locale
-            ]
-            product["localizations"].append(replacement)
-            product["localizations"].sort(key=lambda entry: entry["locale"])
+            set_storekit_localization(
+                products[product_id],
+                storekit_locale,
+                translation["storeKit"][period],
+            )
+
+    for storekit_locale, translations in EXISTING_STOREKIT.items():
+        for period, product_id in product_ids.items():
+            set_storekit_localization(
+                products[product_id],
+                storekit_locale,
+                translations[period],
+            )
 
     save_json(STOREKIT, storekit)
 
@@ -158,8 +245,9 @@ def main() -> None:
     loaded = apply_string_catalogs()
     apply_storekit(loaded)
     print(
-        f"Applied {len(loaded)} locales across "
-        f"{len(load_json(LOCALIZABLE)['strings'])} Localizable keys."
+        f"Applied {len(loaded)} new locales across "
+        f"{len(load_json(LOCALIZABLE)['strings'])} Localizable keys and "
+        f"completed StoreKit metadata for all target locales."
     )
 
 
