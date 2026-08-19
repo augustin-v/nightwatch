@@ -28,6 +28,16 @@
               "locale": "cs_CZ"
             },
             {
+              "description": "Nordlysprognoser, alarmer og kort over nordlysovalen.",
+              "displayName": "Nightwatch Årlig",
+              "locale": "da_DK"
+            },
+            {
+              "description": "Polarlichtvorhersagen, Benachrichtigungen und Karte des Polarlichtovals.",
+              "displayName": "Nightwatch Jährlich",
+              "locale": "de_DE"
+            },
+            {
               "description": "Aurora forecasts, alerts and the oval map.",
               "displayName": "Nightwatch Annual",
               "locale": "en_US"
@@ -36,6 +46,16 @@
               "description": "Pronósticos de auroras, alertas y mapa del óvalo auroral.",
               "displayName": "Nightwatch Anual",
               "locale": "es_ES"
+            },
+            {
+              "description": "Revontuliennusteet, ilmoitukset ja revontuliovaalin kartta.",
+              "displayName": "Nightwatch Vuosittainen",
+              "locale": "fi_FI"
+            },
+            {
+              "description": "Prévisions d’aurores boréales, alertes et carte de l’ovale auroral.",
+              "displayName": "Nightwatch Annuel",
+              "locale": "fr_FR"
             },
             {
               "description": "Previsioni dell’aurora, avvisi e mappa dell’ovale aurorale.",
@@ -53,9 +73,24 @@
               "locale": "ko_KR"
             },
             {
+              "description": "Nordlysprognoser, varsler og kart over nordlysovalen.",
+              "displayName": "Nightwatch Årlig",
+              "locale": "nb_NO"
+            },
+            {
+              "description": "Noorderlichtvoorspellingen, meldingen en kaart van het noorderlichtovaal.",
+              "displayName": "Nightwatch Jaarlijks",
+              "locale": "nl_NL"
+            },
+            {
               "description": "Prognozy zorzy, alerty i mapa owalu zorzowego.",
               "displayName": "Nightwatch Roczny",
               "locale": "pl_PL"
+            },
+            {
+              "description": "Norrskensprognoser, aviseringar och karta över norrskensovalen.",
+              "displayName": "Nightwatch Årsvis",
+              "locale": "sv_SE"
             },
             {
               "description": "極光預報、提醒與極光橢圓地圖。",
@@ -84,6 +119,16 @@
               "locale": "cs_CZ"
             },
             {
+              "description": "Nordlysprognoser, alarmer og kort over nordlysovalen.",
+              "displayName": "Nightwatch Ugentlig",
+              "locale": "da_DK"
+            },
+            {
+              "description": "Polarlichtvorhersagen, Benachrichtigungen und Karte des Polarlichtovals.",
+              "displayName": "Nightwatch Wöchentlich",
+              "locale": "de_DE"
+            },
+            {
               "description": "Aurora forecasts, alerts and the oval map.",
               "displayName": "Nightwatch Weekly",
               "locale": "en_US"
@@ -92,6 +137,16 @@
               "description": "Pronósticos de auroras, alertas y mapa del óvalo auroral.",
               "displayName": "Nightwatch Semanal",
               "locale": "es_ES"
+            },
+            {
+              "description": "Revontuliennusteet, ilmoitukset ja revontuliovaalin kartta.",
+              "displayName": "Nightwatch Viikoittainen",
+              "locale": "fi_FI"
+            },
+            {
+              "description": "Prévisions d’aurores boréales, alertes et carte de l’ovale auroral.",
+              "displayName": "Nightwatch Hebdomadaire",
+              "locale": "fr_FR"
             },
             {
               "description": "Previsioni dell’aurora, avvisi e mappa dell’ovale aurorale.",
@@ -109,9 +164,24 @@
               "locale": "ko_KR"
             },
             {
+              "description": "Nordlysprognoser, varsler og kart over nordlysovalen.",
+              "displayName": "Nightwatch Ukentlig",
+              "locale": "nb_NO"
+            },
+            {
+              "description": "Noorderlichtvoorspellingen, meldingen en kaart van het noorderlichtovaal.",
+              "displayName": "Nightwatch Wekelijks",
+              "locale": "nl_NL"
+            },
+            {
               "description": "Prognozy zorzy, alerty i mapa owalu zorzowego.",
               "displayName": "Nightwatch Tygodniowy",
               "locale": "pl_PL"
+            },
+            {
+              "description": "Norrskensprognoser, aviseringar och karta över norrskensovalen.",
+              "displayName": "Nightwatch Veckovis",
+              "locale": "sv_SE"
             },
             {
               "description": "極光預報、提醒與極光橢圓地圖。",
