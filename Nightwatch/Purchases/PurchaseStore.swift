@@ -43,6 +43,8 @@ final class PurchaseStore {
             apiKey: PurchaseConfiguration.superwallAPIKey,
             purchaseController: RevenueCatPurchaseController.shared
         )
+
+        AdAttribution.start()
     }
 
     /// Refreshes the current entitlement. Product presentation belongs to
