@@ -60,11 +60,12 @@ jobs:
         run: swift test --package-path AuroraCore
 
   ios-build:
-    name: iOS build and app tests
+    name: iOS build, tests, and locale launch smoke
     needs: catalogs
     runs-on: macos-latest
     env:
       FACTORY_REPO_TOKEN: ${{ secrets.FACTORY_REPO_TOKEN }}
+      DERIVED_DATA: ${{ github.workspace }}/.build/NightwatchDerivedData
     steps:
       - uses: actions/checkout@v4
 
@@ -110,17 +111,68 @@ jobs:
             -scheme Nightwatch \
             -configuration Debug \
             -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$DERIVED_DATA" \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Select simulator
+        if: env.FACTORY_REPO_TOKEN != ''
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(device["udid"] for runtime in d["devices"].values() for device in runtime if device["name"].startswith("iPhone")))')
+          echo "SIMULATOR_UDID=$UDID" >> "$GITHUB_ENV"
 
       - name: Run app tests
         if: env.FACTORY_REPO_TOKEN != ''
         run: |
-          UDID=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(device["udid"] for runtime in d["devices"].values() for device in runtime if device["name"].startswith("iPhone")))')
           xcodebuild \
             -project Nightwatch.xcodeproj \
             -scheme Nightwatch \
             -configuration Debug \
-            -destination "platform=iOS Simulator,id=$UDID" \
+            -destination "platform=iOS Simulator,id=$SIMULATOR_UDID" \
+            -derivedDataPath "$DERIVED_DATA" \
             CODE_SIGNING_ALLOWED=NO \
             test
+
+      - name: Launch smoke test in every target locale
+        if: env.FACTORY_REPO_TOKEN != ''
+        run: |
+          xcrun simctl boot "$SIMULATOR_UDID" || true
+          xcrun simctl bootstatus "$SIMULATOR_UDID" -b
+          APP_PATH="$DERIVED_DATA/Build/Products/Debug-iphonesimulator/Nightwatch.app"
+          test -d "$APP_PATH"
+          xcrun simctl install "$SIMULATOR_UDID" "$APP_PATH"
+          mkdir -p localization-screenshots
+
+          while IFS='|' read -r language locale; do
+            echo "Launching $language ($locale)"
+            xcrun simctl launch --terminate-running-process \
+              "$SIMULATOR_UDID" com.augustinv.nightwatch \
+              -AppleLanguages "($language)" \
+              -AppleLocale "$locale"
+            sleep 2
+            xcrun simctl io "$SIMULATOR_UDID" screenshot \
+              "localization-screenshots/${language//\//-}.png"
+          done <<'EOF'
+          en|en_US
+          nb|nb_NO
+          sv|sv_SE
+          fi|fi_FI
+          da|da_DK
+          de-DE|de_DE
+          nl-NL|nl_NL
+          fr|fr_FR
+          pl|pl_PL
+          it|it_IT
+          es|es_ES
+          cs|cs_CZ
+          ja|ja_JP
+          ko|ko_KR
+          zh-Hant|zh_TW
+          EOF
+
+      - name: Upload localization screenshots
+        if: env.FACTORY_REPO_TOKEN != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: localization-launch-screenshots
+          path: localization-screenshots
