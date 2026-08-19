@@ -1,65 +1,135 @@
 {
-  "identifier" : "NIGHTWATCH_LOCAL",
-  "nonRenewingSubscriptions" : [],
-  "products" : [],
-  "settings" : {
-    "_askToBuyEnabled" : false,
-    "_billingIssuesEnabled" : false,
-    "_storeKitErrors" : []
+  "identifier": "NIGHTWATCH_LOCAL",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_askToBuyEnabled": false,
+    "_billingIssuesEnabled": false,
+    "_storeKitErrors": []
   },
-  "subscriptionGroups" : [
+  "subscriptionGroups": [
     {
-      "id" : "22297381",
-      "localizations" : [],
-      "name" : "Nightwatch",
-      "subscriptions" : [
+      "id": "22297381",
+      "localizations": [],
+      "name": "Nightwatch",
+      "subscriptions": [
         {
-          "adHocOffers" : [],
-          "codeOffers" : [],
-          "displayPrice" : "39.99",
-          "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "6799666881",
-          "introductoryOffer" : null,
-          "localizations" : [
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "39.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6799666881",
+          "introductoryOffer": null,
+          "localizations": [
             {
-              "description" : "Aurora forecasts, alerts and the oval map.",
-              "displayName" : "Nightwatch Annual",
-              "locale" : "en_US"
+              "description": "Předpovědi polární záře, upozornění a mapa aurorálního oválu.",
+              "displayName": "Nightwatch Roční",
+              "locale": "cs_CZ"
+            },
+            {
+              "description": "Aurora forecasts, alerts and the oval map.",
+              "displayName": "Nightwatch Annual",
+              "locale": "en_US"
+            },
+            {
+              "description": "Pronósticos de auroras, alertas y mapa del óvalo auroral.",
+              "displayName": "Nightwatch Anual",
+              "locale": "es_ES"
+            },
+            {
+              "description": "Previsioni dell’aurora, avvisi e mappa dell’ovale aurorale.",
+              "displayName": "Nightwatch Annuale",
+              "locale": "it_IT"
+            },
+            {
+              "description": "オーロラ予報、通知、オーロラオーバルのマップ。",
+              "displayName": "Nightwatch 年間プラン",
+              "locale": "ja_JP"
+            },
+            {
+              "description": "오로라 예보, 알림, 오로라 오벌 지도.",
+              "displayName": "Nightwatch 연간 플랜",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "Prognozy zorzy, alerty i mapa owalu zorzowego.",
+              "displayName": "Nightwatch Roczny",
+              "locale": "pl_PL"
+            },
+            {
+              "description": "極光預報、提醒與極光橢圓地圖。",
+              "displayName": "Nightwatch 年繳方案",
+              "locale": "zh_TW"
             }
           ],
-          "productID" : "com.augustinv.nightwatch.annual",
-          "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Nightwatch Annual",
-          "subscriptionGroupID" : "22297381",
-          "type" : "RecurringSubscription"
+          "productID": "com.augustinv.nightwatch.annual",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Nightwatch Annual",
+          "subscriptionGroupID": "22297381",
+          "type": "RecurringSubscription"
         },
         {
-          "adHocOffers" : [],
-          "codeOffers" : [],
-          "displayPrice" : "9.99",
-          "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "6799667115",
-          "introductoryOffer" : null,
-          "localizations" : [
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "9.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6799667115",
+          "introductoryOffer": null,
+          "localizations": [
             {
-              "description" : "Aurora forecasts, alerts and the oval map.",
-              "displayName" : "Nightwatch Weekly",
-              "locale" : "en_US"
+              "description": "Předpovědi polární záře, upozornění a mapa aurorálního oválu.",
+              "displayName": "Nightwatch Týdenní",
+              "locale": "cs_CZ"
+            },
+            {
+              "description": "Aurora forecasts, alerts and the oval map.",
+              "displayName": "Nightwatch Weekly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Pronósticos de auroras, alertas y mapa del óvalo auroral.",
+              "displayName": "Nightwatch Semanal",
+              "locale": "es_ES"
+            },
+            {
+              "description": "Previsioni dell’aurora, avvisi e mappa dell’ovale aurorale.",
+              "displayName": "Nightwatch Settimanale",
+              "locale": "it_IT"
+            },
+            {
+              "description": "オーロラ予報、通知、オーロラオーバルのマップ。",
+              "displayName": "Nightwatch 週間プラン",
+              "locale": "ja_JP"
+            },
+            {
+              "description": "오로라 예보, 알림, 오로라 오벌 지도.",
+              "displayName": "Nightwatch 주간 플랜",
+              "locale": "ko_KR"
+            },
+            {
+              "description": "Prognozy zorzy, alerty i mapa owalu zorzowego.",
+              "displayName": "Nightwatch Tygodniowy",
+              "locale": "pl_PL"
+            },
+            {
+              "description": "極光預報、提醒與極光橢圓地圖。",
+              "displayName": "Nightwatch 週繳方案",
+              "locale": "zh_TW"
             }
           ],
-          "productID" : "com.augustinv.nightwatch.weekly",
-          "recurringSubscriptionPeriod" : "P1W",
-          "referenceName" : "Nightwatch Weekly",
-          "subscriptionGroupID" : "22297381",
-          "type" : "RecurringSubscription"
+          "productID": "com.augustinv.nightwatch.weekly",
+          "recurringSubscriptionPeriod": "P1W",
+          "referenceName": "Nightwatch Weekly",
+          "subscriptionGroupID": "22297381",
+          "type": "RecurringSubscription"
         }
       ]
     }
   ],
-  "version" : {
-    "major" : 3,
-    "minor" : 0
+  "version": {
+    "major": 3,
+    "minor": 0
   }
 }

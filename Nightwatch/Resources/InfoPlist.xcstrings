@@ -51,6 +51,48 @@
             "state": "translated",
             "value": "Nightwatch utilise votre position sur l'appareil pour déterminer le coucher du soleil, le crépuscule et la visibilité de l'aurore boréale là où vous êtes, ainsi que pour demander des prévisions de nuages locales. Votre position ne nous est jamais envoyée."
           }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch używa Twojej lokalizacji na urządzeniu, aby obliczyć zachód słońca, zmierzch i widoczność zorzy oraz pobrać lokalną prognozę zachmurzenia. Twoja lokalizacja nigdy nie jest wysyłana do nas."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch usa la tua posizione sul dispositivo per calcolare tramonto, crepuscolo e visibilità dell’aurora dove ti trovi e per richiedere una previsione locale delle nuvole. La tua posizione non viene mai inviata a noi."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch usa tu ubicación en el dispositivo para calcular la puesta de sol, el crepúsculo y la visibilidad de la aurora donde estás, y para solicitar un pronóstico local de nubes. Tu ubicación nunca se envía a nosotros."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch používá vaši polohu přímo v zařízení k výpočtu západu slunce, soumraku a viditelnosti polární záře tam, kde jste, a k získání místní předpovědi oblačnosti. Vaše poloha se nám nikdy neposílá."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatchは、現在地の日没・薄明・オーロラの見えやすさをデバイス上で計算し、現地の雲予報を取得するために位置情報を使用します。位置情報がNightwatch側に送信されることはありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch는 현재 위치의 일몰, 박명, 오로라 가시성을 기기에서 계산하고 지역 구름 예보를 요청하기 위해 위치 정보를 사용합니다. 위치 정보는 Nightwatch 측으로 전송되지 않습니다."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nightwatch 會在裝置上使用你的位置，計算所在地的日落、暮光與極光可見度，並取得當地雲量預報。你的定位資訊絕不會傳送給我們。"
+          }
         }
       }
     }
