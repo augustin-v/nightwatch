@@ -55,9 +55,8 @@ targets:
         CFBundleIconName: AppIcon
         CFBundleShortVersionString: "1.0"
         CFBundleVersion: "2"
-        # Launch locales per the candidate spec. Keep in sync with the
-        # .xcstrings catalogs; a locale listed here with no catalog entries
-        # silently ships English, which is worse than not listing it.
+        # Launch locales. Keep in sync with the .xcstrings catalogs; a locale
+        # listed here with no catalog entries silently ships English.
         CFBundleLocalizations:
           - en
           - nb
@@ -67,6 +66,13 @@ targets:
           - de-DE
           - nl-NL
           - fr
+          - pl
+          - it
+          - es
+          - cs
+          - ja
+          - ko
+          - zh-Hant
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
