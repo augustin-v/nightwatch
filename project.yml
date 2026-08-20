@@ -47,16 +47,19 @@ targets:
       - package: FactoryAnalytics
         product: FactoryAnalytics
       - package: AuroraCore
+      # Apple Ads install attribution (AdAttribution.swift).
+      - sdk: AdServices.framework
     info:
       path: Nightwatch/Resources/Info.plist
       properties:
         CFBundleDisplayName: Aurora Forecast - Nightwatch
         CFBundleDevelopmentRegion: en
         CFBundleIconName: AppIcon
-        CFBundleShortVersionString: "1.0"
-        CFBundleVersion: "2"
-        # Launch locales. Keep in sync with the .xcstrings catalogs; a locale
-        # listed here with no catalog entries silently ships English.
+        CFBundleShortVersionString: "1.2"
+        CFBundleVersion: "4"
+        # Launch locales per the candidate spec. Keep in sync with the
+        # .xcstrings catalogs; a locale listed here with no catalog entries
+        # silently ships English, which is worse than not listing it.
         CFBundleLocalizations:
           - en
           - nb
